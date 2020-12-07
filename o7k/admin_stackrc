@@ -1,9 +1,0 @@
-export OS_IDENTITY_API_VERSION=3
-export OS_USER_DOMAIN_NAME=admin_domain
-export OS_USERNAME=admin
-export OS_PROJECT_DOMAIN_NAME=admin_domain
-export OS_PROJECT_NAME=admin
-export OS_DOMAIN_NAME=admin_domain
-export OS_PASSWORD=password
-auth_url=$(juju status|grep 5000|awk '{print $5}')
-export OS_AUTH_URL=http://${auth_url}:5000/v3
