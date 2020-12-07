@@ -1,0 +1,325 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1561\cocoasubrtf610
+{\fonttbl\f0\fnil\fcharset0 AndaleMono;}
+{\colortbl;\red255\green255\blue255;\red47\green180\blue29;\red0\green0\blue0;\red47\green255\blue18;
+\red64\green11\blue217;}
+{\*\expandedcolortbl;;\cssrgb\c20239\c73899\c14948;\csgray\c0\c90000;\cssrgb\c15686\c99608\c7843;
+\cssrgb\c32309\c18668\c88228;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf2 \cb3 \CocoaLigature0 ubuntu@ip-172-31-47-115\cf4 :\cf5 ~\cf4 $ export ORCHESTRATOR=all\
+\cf2 ubuntu@ip-172-31-47-115\cf4 :\cf5 ~\cf4 $ tf-devstack/juju/run.sh \
+INFO: =================== Thu Jul  2 13:13:12 UTC 2020 ===================\
+\
+[there is no tf devenv configuration to load]\
+INFO: Applying stages juju machines k8s openstack tf wait\
+INFO: Running stage juju at Thu Jul  2 13:13:12 UTC 2020\
+Hit:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic InRelease\
+Get:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates InRelease [88.7 kB]\
+Get:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-backports InRelease [74.6 kB]\
+Get:4 http://security.ubuntu.com/ubuntu bionic-security InRelease [88.7 kB]\
+Get:5 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/main amd64 Packages [1000 kB]\
+Get:6 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/universe amd64 Packages [1089 kB]\
+Get:7 http://security.ubuntu.com/ubuntu bionic-security/main amd64 Packages [762 kB]\
+Get:8 http://security.ubuntu.com/ubuntu bionic-security/universe amd64 Packages [674 kB]\
+Fetched 3777 kB in 1s (3328 kB/s)\
+Reading package lists...\
+Reading package lists...\
+Building dependency tree...\
+Reading state information...\
+python3-jinja2 is already the newest version (2.10-1ubuntu0.18.04.1).\
+software-properties-common is already the newest version (0.96.24.32.13).\
+software-properties-common set to manually installed.\
+The following additional packages will be installed:\
+  libcurl4 libjq1 libonig4\
+The following NEW packages will be installed:\
+  jq libjq1 libonig4 netmask prips snap\
+The following packages will be upgraded:\
+  curl libcurl4\
+2 upgraded, 6 newly installed, 0 to remove and 15 not upgraded.\
+Need to get 1061 kB of archives.\
+After this operation, 3745 kB of additional disk space will be used.\
+Get:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/main amd64 curl amd64 7.58.0-2ubuntu3.9 [159 kB]\
+Get:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/main amd64 libcurl4 amd64 7.58.0-2ubuntu3.9 [214 kB]\
+Get:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic/universe amd64 libonig4 amd64 6.7.0-1 [119 kB]\
+Get:4 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic/universe amd64 libjq1 amd64 1.5+dfsg-2 [111 kB]\
+Get:5 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic/universe amd64 jq amd64 1.5+dfsg-2 [45.6 kB]\
+Get:6 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic/universe amd64 netmask amd64 2.4.3-2 [24.2 kB]\
+Get:7 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic/universe amd64 prips amd64 1.0.2-1 [12.5 kB]\
+Get:8 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic/universe amd64 snap amd64 2013-11-29-8 [375 kB]\
+Fetched 1061 kB in 0s (18.1 MB/s)\
+(Reading database ... 94916 files and directories currently installed.)\
+Preparing to unpack .../0-curl_7.58.0-2ubuntu3.9_amd64.deb ...\
+Unpacking curl (7.58.0-2ubuntu3.9) over (7.58.0-2ubuntu3.8) ...\
+Preparing to unpack .../1-libcurl4_7.58.0-2ubuntu3.9_amd64.deb ...\
+Unpacking libcurl4:amd64 (7.58.0-2ubuntu3.9) over (7.58.0-2ubuntu3.8) ...\
+Selecting previously unselected package libonig4:amd64.\
+Preparing to unpack .../2-libonig4_6.7.0-1_amd64.deb ...\
+Unpacking libonig4:amd64 (6.7.0-1) ...\
+Selecting previously unselected package libjq1:amd64.\
+Preparing to unpack .../3-libjq1_1.5+dfsg-2_amd64.deb ...\
+Unpacking libjq1:amd64 (1.5+dfsg-2) ...\
+Selecting previously unselected package jq.\
+Preparing to unpack .../4-jq_1.5+dfsg-2_amd64.deb ...\
+Unpacking jq (1.5+dfsg-2) ...\
+Selecting previously unselected package netmask.\
+Preparing to unpack .../5-netmask_2.4.3-2_amd64.deb ...\
+Unpacking netmask (2.4.3-2) ...\
+Selecting previously unselected package prips.\
+Preparing to unpack .../6-prips_1.0.2-1_amd64.deb ...\
+Unpacking prips (1.0.2-1) ...\
+Selecting previously unselected package snap.\
+Preparing to unpack .../7-snap_2013-11-29-8_amd64.deb ...\
+Unpacking snap (2013-11-29-8) ...\
+Setting up libonig4:amd64 (6.7.0-1) ...\
+Setting up libcurl4:amd64 (7.58.0-2ubuntu3.9) ...\
+Setting up snap (2013-11-29-8) ...\
+Setting up libjq1:amd64 (1.5+dfsg-2) ...\
+Setting up netmask (2.4.3-2) ...\
+Setting up prips (1.0.2-1) ...\
+Setting up jq (1.5+dfsg-2) ...\
+Setting up curl (7.58.0-2ubuntu3.9) ...\
+Processing triggers for libc-bin (2.27-3ubuntu1) ...\
+Processing triggers for man-db (2.8.3-2ubuntu0.1) ...\
+Processing triggers for install-info (6.5.0.dfsg.1-2) ...\
+juju 2.8.0 from Canonical* installed\
+Generating public/private rsa key pair.\
+Your identification has been saved in /home/ubuntu/.ssh/id_rsa.\
+Your public key has been saved in /home/ubuntu/.ssh/id_rsa.pub.\
+The key fingerprint is:\
+SHA256:uZEahtQfuVMxHwzA4whbMTcDaqVHnnPTTL8QDdJcwD8 ubuntu@ip-172-31-47-115\
+The key's randomart image is:\
++---[RSA 2048]----+\
+|      *+*=OBo    |\
+|    .B.+oO+*o.   |\
+|    =+*o=.=.o    |\
+|   o.o.+.B .E.   |\
+|    . o S   ..   |\
+|     . o +       |\
+|      . .        |\
+|                 |\
+|                 |\
++----[SHA256]-----+\
+Since Juju 2 is being run for the first time, downloaded the latest public cloud information.\
+Creating Juju controller "tf-local-controller" on manual\
+Looking for packaged Juju agent version 2.8.0 for amd64\
+Installing Juju agent on bootstrap instance\
+Fetching Juju Dashboard 0.1.8\
+Running machine configuration script...\
+Warning: Permanently added '172.31.47.115' (ECDSA) to the list of known hosts.\
+Bootstrap agent now started\
+Contacting Juju controller at 172.31.47.115 to verify accessibility...\
+\
+Bootstrap complete, controller "tf-local-controller" is now available\
+Controller machines are in the "controller" model\
+Initial model "default" added\
+ -> tf-local-controller:admin/controller\
+INFO: Running stage machines at Thu Jul  2 13:14:36 UTC 2020\
+Located charm "cs:ubuntu-15".\
+Deploying charm "cs:ubuntu-15".\
+Hit:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic InRelease\
+Hit:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates InRelease\
+Hit:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-backports InRelease\
+Hit:4 http://security.ubuntu.com/ubuntu bionic-security InRelease\
+Reading package lists...\
+Reading package lists...\
+Building dependency tree...\
+Reading state information...\
+jq is already the newest version (1.5+dfsg-2).\
+dnsutils is already the newest version (1:9.11.3+dfsg-1ubuntu1.12).\
+dnsutils set to manually installed.\
+0 upgraded, 0 newly installed, 0 to remove and 3 not upgraded.\
+INFO: Running stage k8s at Thu Jul  2 13:14:41 UTC 2020\
+INFO: Change variables in bundle...\
+Resolving charm: cs:~containers/docker-59\
+Resolving charm: cs:~containers/easyrsa-303\
+Resolving charm: cs:~containers/etcd-501\
+Resolving charm: cs:~containers/kubernetes-master-827\
+Resolving charm: cs:~containers/kubernetes-worker-665\
+Resolving charm: cs:bionic/ntp\
+Resolving charm: cs:bionic/ubuntu\
+Executing changes:\
+- upload charm cs:~containers/docker-59 for series bionic\
+- deploy application docker on bionic using cs:~containers/docker-59\
+- upload charm cs:~containers/easyrsa-303 for series bionic\
+- deploy application easyrsa on bionic using cs:~containers/easyrsa-303\
+  added resource easyrsa\
+- upload charm cs:~containers/etcd-501 for series bionic\
+- deploy application etcd on bionic using cs:~containers/etcd-501\
+  added resource core\
+  added resource etcd\
+  added resource snapshot\
+- upload charm cs:~containers/kubernetes-master-827 for series bionic\
+- deploy application kubernetes-master on bionic using cs:~containers/kubernetes-master-827\
+  added resource cdk-addons\
+  added resource core\
+  added resource kube-apiserver\
+  added resource kube-controller-manager\
+  added resource kube-proxy\
+  added resource kube-scheduler\
+  added resource kubectl\
+- expose kubernetes-master\
+- upload charm cs:~containers/kubernetes-worker-665 for series bionic\
+- deploy application kubernetes-worker on bionic using cs:~containers/kubernetes-worker-665\
+  added resource cni-amd64\
+  added resource cni-arm64\
+  added resource cni-s390x\
+  added resource core\
+  added resource kube-proxy\
+  added resource kubectl\
+  added resource kubelet\
+- upload charm cs:ntp-39 for series bionic\
+- deploy application ntp on bionic using cs:ntp-39\
+- add relation kubernetes-master:kube-api-endpoint - kubernetes-worker:kube-api-endpoint\
+- add relation kubernetes-master:kube-control - kubernetes-worker:kube-control\
+- add relation kubernetes-master:certificates - easyrsa:client\
+- add relation kubernetes-master:etcd - etcd:db\
+- add relation kubernetes-worker:certificates - easyrsa:client\
+- add relation etcd:certificates - easyrsa:client\
+- add relation kubernetes-master:container-runtime - docker:docker\
+- add relation kubernetes-worker:container-runtime - docker:docker\
+- add relation ubuntu - ntp\
+- add unit easyrsa/0 to existing machine 0\
+- add unit etcd/0 to existing machine 0\
+- add unit kubernetes-master/0 to existing machine 0\
+- add unit kubernetes-worker/0 to existing machine 0\
+Deploy of bundle completed.\
+INFO: Running stage openstack at Thu Jul  2 13:15:06 UTC 2020\
+INFO: Change variables in bundle...\
+Resolving charm: cs:glance\
+Resolving charm: cs:heat\
+Resolving charm: cs:keystone\
+Resolving charm: cs:percona-cluster\
+Resolving charm: cs:neutron-api\
+Resolving charm: cs:nova-cloud-controller\
+Resolving charm: cs:nova-compute\
+Resolving charm: cs:bionic/ntp\
+Resolving charm: cs:openstack-dashboard\
+Resolving charm: cs:rabbitmq-server\
+Resolving charm: cs:bionic/ubuntu\
+Executing changes:\
+- upload charm cs:glance-297 for series bionic\
+- deploy application glance on bionic using cs:glance-297\
+  added resource policyd-override\
+- upload charm cs:heat-276 for series bionic\
+- deploy application heat on bionic using cs:heat-276\
+  added resource policyd-override\
+- expose heat\
+- upload charm cs:keystone-315 for series bionic\
+- deploy application keystone on bionic using cs:keystone-315\
+  added resource policyd-override\
+- upload charm cs:percona-cluster-290 for series bionic\
+- deploy application mysql on bionic using cs:percona-cluster-290\
+- upload charm cs:neutron-api-286 for series bionic\
+- deploy application neutron-api on bionic using cs:neutron-api-286\
+  added resource policyd-override\
+- upload charm cs:nova-cloud-controller-345 for series bionic\
+- deploy application nova-cloud-controller on bionic using cs:nova-cloud-controller-345\
+  added resource policyd-override\
+- upload charm cs:nova-compute-317 for series bionic\
+- deploy application nova-compute on bionic using cs:nova-compute-317\
+- upload charm cs:openstack-dashboard-304 for series bionic\
+- deploy application openstack-dashboard on bionic using cs:openstack-dashboard-304\
+  added resource policyd-override\
+  added resource theme\
+- upload charm cs:rabbitmq-server-103 for series bionic\
+- deploy application rabbitmq-server on bionic using cs:rabbitmq-server-103\
+- add relation nova-compute:amqp - rabbitmq-server:amqp\
+- add relation keystone:shared-db - mysql:shared-db\
+- add relation nova-cloud-controller:identity-service - keystone:identity-service\
+- add relation glance:identity-service - keystone:identity-service\
+- add relation neutron-api:identity-service - keystone:identity-service\
+- add relation neutron-api:shared-db - mysql:shared-db\
+- add relation neutron-api:amqp - rabbitmq-server:amqp\
+- add relation glance:shared-db - mysql:shared-db\
+- add relation glance:amqp - rabbitmq-server:amqp\
+- add relation nova-cloud-controller:image-service - glance:image-service\
+- add relation nova-compute:image-service - glance:image-service\
+- add relation nova-cloud-controller:cloud-compute - nova-compute:cloud-compute\
+- add relation nova-cloud-controller:amqp - rabbitmq-server:amqp\
+- add relation openstack-dashboard:identity-service - keystone:identity-service\
+- add relation openstack-dashboard:shared-db - mysql:shared-db\
+- add relation nova-cloud-controller:shared-db - mysql:shared-db\
+- add relation nova-cloud-controller:neutron-api - neutron-api:neutron-api\
+- add relation heat:shared-db - mysql:shared-db\
+- add relation heat:amqp - rabbitmq-server:amqp\
+- add relation heat - keystone\
+- add relation ubuntu - ntp\
+- add unit glance/0 to 0/lxd/0\
+- add unit heat/0 to 0/lxd/1\
+- add unit keystone/0 to 0/lxd/2\
+- add unit mysql/0 to 0/lxd/3\
+- add unit neutron-api/0 to 0/lxd/4\
+- add unit nova-cloud-controller/0 to 0/lxd/5\
+- add unit nova-compute/0 to existing machine 0\
+- add unit openstack-dashboard/0 to 0/lxd/6\
+- add unit rabbitmq-server/0 to 0/lxd/7\
+Deploy of bundle completed.\
+INFO: Running stage tf at Thu Jul  2 13:15:18 UTC 2020\
+Host tungstenfabric not found: 2(SERVFAIL)\
+ishost = false namespace = tungstenfabric/ registry_url =\
+Downloading 'tf-charms-src:latest@latest' (1 layers)...\
+##################################################################################################################################################################################################### 100.0%\
+\
+Download of images into '/tmp/tmp.YppLnR4I3m' complete.\
+Use something like the following to load the result into a Docker daemon:\
+  tar -cC '/tmp/tmp.YppLnR4I3m' . | docker load\
+INFO: Change variables in bundle...\
+Executing changes:\
+- upload charm /home/ubuntu/tf-charms/contrail-agent for series bionic\
+- deploy application contrail-agent on bionic using /home/ubuntu/tf-charms/contrail-agent\
+- upload charm /home/ubuntu/tf-charms/contrail-analytics for series bionic\
+- deploy application contrail-analytics on bionic using /home/ubuntu/tf-charms/contrail-analytics\
+- expose contrail-analytics\
+- upload charm /home/ubuntu/tf-charms/contrail-analyticsdb for series bionic\
+- deploy application contrail-analyticsdb on bionic using /home/ubuntu/tf-charms/contrail-analyticsdb\
+- expose contrail-analyticsdb\
+- upload charm /home/ubuntu/tf-charms/contrail-controller for series bionic\
+- deploy application contrail-controller on bionic using /home/ubuntu/tf-charms/contrail-controller\
+- expose contrail-controller\
+- upload charm /home/ubuntu/tf-charms/contrail-keystone-auth for series bionic\
+- deploy application contrail-keystone-auth on bionic using /home/ubuntu/tf-charms/contrail-keystone-auth\
+- upload charm /home/ubuntu/tf-charms/contrail-kubernetes-master for series bionic\
+- deploy application contrail-kubernetes-master on bionic using /home/ubuntu/tf-charms/contrail-kubernetes-master\
+- upload charm /home/ubuntu/tf-charms/contrail-kubernetes-node for series bionic\
+- deploy application contrail-kubernetes-node on bionic using /home/ubuntu/tf-charms/contrail-kubernetes-node\
+- upload charm /home/ubuntu/tf-charms/contrail-openstack for series bionic\
+- deploy application contrail-openstack on bionic using /home/ubuntu/tf-charms/contrail-openstack\
+- add relation contrail-controller - contrail-analytics\
+- add relation contrail-controller - contrail-analyticsdb\
+- add relation contrail-analytics - contrail-analyticsdb\
+- add relation contrail-agent - contrail-controller\
+- add relation contrail-controller - contrail-keystone-auth\
+- add relation contrail-openstack - contrail-controller\
+- add relation contrail-kubernetes-master:contrail-controller - contrail-controller:contrail-controller\
+- add relation contrail-kubernetes-master:contrail-kubernetes-config - contrail-kubernetes-node:contrail-kubernetes-config\
+- add unit contrail-analytics/0 to existing machine 0\
+- add unit contrail-analyticsdb/0 to existing machine 0\
+- add unit contrail-controller/0 to existing machine 0\
+- add unit contrail-keystone-auth/0 to existing machine 0\
+Deploy of bundle completed.\
+Tungsten Fabric Web UI will be available at https://172.31.47.115:8143\
+Use admin/password to log in\
+INFO: Running stage wait at Thu Jul  2 13:15:30 UTC 2020\
+.........................................................................................................................................\
+..............................................................................................\
+INFO: done in 2310s\
+\
+[update tf stack configuration]\
+tf setup profile /home/ubuntu/.tf/stack.env\
+DEPLOYER=juju\
+CONTRAIL_CONTAINER_TAG=latest\
+CONTAINER_REGISTRY=tungstenfabric\
+ORCHESTRATOR=all\
+OPENSTACK_VERSION="queens"\
+CONTROLLER_NODES="172.31.47.115"\
+AGENT_NODES="172.31.47.115"\
+SSL_ENABLE="false"\
+SSH_USER='ubuntu'\
+AUTH_PASSWORD='password'\
+AUTH_DOMAIN='admin_domain'\
+AUTH_PORT='35357'\
+AUTH_URL='http://10.36.58.188:5000/v3'\
+INFO: Successful deployment Thu Jul  2 13:55:33 UTC 2020\
+\cf2 ubuntu@ip-172-31-47-115\cf4 :\cf5 ~\cf4 $ \
+}

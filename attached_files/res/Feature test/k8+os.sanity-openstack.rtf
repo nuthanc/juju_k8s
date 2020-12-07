@@ -1,0 +1,626 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 AndaleMono;}
+{\colortbl;\red255\green255\blue255;\red47\green255\blue18;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c15686\c99608\c7843;\csgray\c0\c90000;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww26020\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 f
+\f1 \cf2 \cb3 \CocoaLigature0 2020-06-24 14:32:59,779 - INFO - Using existing project [u'admin_domain', u'admin'](23693004-8b8f-4c93-9945-5651302d15c4)\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf2 2020-06-24 14:32:59,969 - INFO - ================================================================================\
+2020-06-24 14:32:59,970 - INFO - STARTING TEST    : test_contrail_status\
+2020-06-24 14:32:59,970 - INFO - TEST DESCRIPTION :  Test to verify that all services are running and active\
+\
+        \
+2020-06-24 14:33:00,232 - INFO - Initial checks done. Running the testcase now\
+2020-06-24 14:33:00,232 - INFO - \
+2020-06-24 14:33:00,369 - INFO - 172.31.39.107\
+2020-06-24 14:33:00,369 - INFO -   config\
+2020-06-24 14:33:00,376 - INFO -     config-nodemgr:active\
+2020-06-24 14:33:00,381 - INFO -     api-server:active\
+2020-06-24 14:33:00,386 - INFO -     schema:active\
+2020-06-24 14:33:00,391 - INFO -     svc-monitor:active\
+2020-06-24 14:33:00,396 - INFO -     device-manager:active\
+2020-06-24 14:33:00,396 - INFO -   config-database\
+2020-06-24 14:33:00,396 - INFO -     config-cassandra:active\
+2020-06-24 14:33:00,396 - INFO -     config-zookeeper:active\
+2020-06-24 14:33:00,396 - INFO -     config-rabbitmq:active\
+2020-06-24 14:33:00,396 - INFO -   vrouter\
+2020-06-24 14:33:00,401 - INFO -     vrouter-nodemgr:active\
+2020-06-24 14:33:00,406 - INFO -     agent:active\
+2020-06-24 14:33:00,406 - INFO -   control\
+2020-06-24 14:33:00,412 - INFO -     control-nodemgr:active\
+2020-06-24 14:33:00,418 - INFO -     control:active\
+2020-06-24 14:33:00,419 - INFO -     named:active\
+2020-06-24 14:33:00,424 - INFO -     dns:active\
+2020-06-24 14:33:00,424 - INFO -   analytics\
+2020-06-24 14:33:00,429 - INFO -     analytics-nodemgr:active\
+2020-06-24 14:33:00,433 - INFO -     analytics-api:active\
+2020-06-24 14:33:00,439 - INFO -     collector:active\
+2020-06-24 14:33:00,439 - INFO -   analytics-database\
+2020-06-24 14:33:00,439 - INFO -     analytics-cassandra:active\
+2020-06-24 14:33:00,445 - INFO -     analyticsdb-nodemgr:active\
+2020-06-24 14:33:00,451 - INFO -     query-engine:active\
+2020-06-24 14:33:00,451 - INFO -   webui\
+2020-06-24 14:33:00,451 - INFO -     webui:active\
+2020-06-24 14:33:00,451 - INFO -     webui-middleware:active\
+2020-06-24 14:33:00,452 - INFO -     redis:active\
+2020-06-24 14:33:00,452 - INFO -   analytics_snmp\
+2020-06-24 14:33:00,457 - INFO -     snmp-collector:active\
+2020-06-24 14:33:00,457 - INFO -     snmp-topology:active\
+2020-06-24 14:33:00,458 - INFO -   analytics_alarm\
+2020-06-24 14:33:00,458 - INFO -     alarmgen:active\
+2020-06-24 14:33:00,458 - INFO - All the contrail services are up on all nodes\
+2020-06-24 14:33:00,458 - INFO - contrail-status passed\
+2020-06-24 14:33:00,707 - INFO - END TEST : test_contrail_status : PASSED[0:00:01]\
+2020-06-24 14:33:00,707 - INFO - --------------------------------------------------------------------------------\
+2020-06-24 14:33:00,751 - INFO - Reading existing Domain with UUID f4984a98-90c7-478d-b9b5-43e122759627\
+2020-06-24 14:33:00,766 - INFO - Using existing domain [u'admin_domain'](f4984a98-90c7-478d-b9b5-43e122759627)\
+2020-06-24 14:33:00,942 - INFO - Project ctest-AnalyticsBasicTestSanity-53398957 not found, creating it\
+2020-06-24 14:33:01,527 - INFO - Created Project:ctest-AnalyticsBasicTestSanity-53398957, ID : c98f3ac2-8b00-4bfa-a9c8-9722a1e238f6 \
+2020-06-24 14:33:03,038 - INFO - ================================================================================\
+2020-06-24 14:33:03,038 - INFO - STARTING TEST    : test_verify_object_logs\
+2020-06-24 14:33:03,038 - INFO - TEST DESCRIPTION : \
+          Description: Test to validate object logs\
+              1.Create vn/vm and verify object log tables updated with\
+                those vn, vm and routing-instance - fails otherwise\
+          Maintainer: sandipd@juniper.net\
+        \
+2020-06-24 14:33:03,287 - INFO - Initial checks done. Running the testcase now\
+2020-06-24 14:33:03,287 - INFO - \
+2020-06-24 14:33:04,447 - INFO - Created VN ctest-vn22-73723004\
+2020-06-24 14:33:05,566 - INFO - VM ([<Server: ctest-AnalyticsBasicTestSanity-53398957-82201307>]) created on node: (ip-172-31-39-107), Zone: (nova:ip-172-31-39-107)\
+2020-06-24 14:33:16,466 - INFO - Validated ObjectVNTable, ObjectRoutingInstance, ObjectVMTable logs\
+2020-06-24 14:33:16,466 - INFO - Deleting VM ctest-AnalyticsBasicTestSanity-53398957-82201307\
+2020-06-24 14:33:16,587 - INFO - Deleting VN ctest-vn22-73723004 \
+2020-06-24 14:33:16,638 - WARNING - Deleting VN ctest-vn22-73723004 failed..Will retry\
+2020-06-24 14:33:19,026 - INFO - END TEST : test_verify_object_logs : PASSED[0:00:16]\
+2020-06-24 14:33:19,026 - INFO - --------------------------------------------------------------------------------\
+2020-06-24 14:33:19,858 - INFO - Deleted project: ctest-AnalyticsBasicTestSanity-53398957, ID : c98f3ac2-8b00-4bfa-a9c8-9722a1e238f6 \
+2020-06-24 14:33:20,179 - INFO - Reading existing Domain with UUID f4984a98-90c7-478d-b9b5-43e122759627\
+2020-06-24 14:33:20,216 - INFO - Using existing domain [u'admin_domain'](f4984a98-90c7-478d-b9b5-43e122759627)\
+2020-06-24 14:33:20,422 - INFO - Project ctest-FloatingipBasicTestSanity-90886386 not found, creating it\
+2020-06-24 14:33:21,006 - INFO - Created Project:ctest-FloatingipBasicTestSanity-90886386, ID : 816ac30e-3d55-4a3c-baff-930255be957b \
+2020-06-24 14:33:22,591 - INFO - Using existing project [u'admin_domain', u'admin'](23693004-8b8f-4c93-9945-5651302d15c4)\
+2020-06-24 14:33:22,923 - INFO - admin user already present\
+2020-06-24 14:33:23,201 - INFO - Adding rules to the default security group in Project admin\
+2020-06-24 14:33:23,283 - INFO - ================================================================================\
+2020-06-24 14:33:23,283 - INFO - STARTING TEST    : test_floating_ip\
+2020-06-24 14:33:23,283 - INFO - TEST DESCRIPTION : Test to validate floating-ip Assignment to a VM. It creates a VM, assigns a FIP to it and pings to a IP in the FIP VN.\
+        \
+2020-06-24 14:33:23,547 - INFO - Initial checks done. Running the testcase now\
+2020-06-24 14:33:23,547 - INFO - \
+2020-06-24 14:33:25,168 - INFO - Created VN ctest-fvn-27154895\
+2020-06-24 14:33:25,755 - INFO - Verified VN network id 20 for VN 0e54818a-ea18-4165-bcc5-a456ac47e35c\
+2020-06-24 14:33:25,755 - INFO - Verifications in API Server for VN ctest-fvn-27154895 passed\
+2020-06-24 14:33:25,832 - INFO - On all control nodes, Config, RI and RT verification for VN ctest-fvn-27154895 passed\
+2020-06-24 14:33:26,295 - INFO - Validated that VN admin_domain:ctest-FloatingipBasicTestSanity-90886386:ctest-fvn-27154895 is found in opserver\
+2020-06-24 14:33:27,584 - INFO - Created VN ctest-vn1-24848140\
+2020-06-24 14:33:27,808 - INFO - Verified VN network id 21 for VN 0c384582-605b-4ebd-a5f4-f806a5cc1f29\
+2020-06-24 14:33:27,808 - INFO - Verifications in API Server for VN ctest-vn1-24848140 passed\
+2020-06-24 14:33:27,854 - INFO - On all control nodes, Config, RI and RT verification for VN ctest-vn1-24848140 passed\
+2020-06-24 14:33:27,932 - INFO - Validated that VN admin_domain:ctest-FloatingipBasicTestSanity-90886386:ctest-vn1-24848140 is found in opserver\
+2020-06-24 14:33:28,703 - INFO - VM ([<Server: ctest-vn1_vm1_name-61015987>]) created on node: (ip-172-31-39-107), Zone: (nova:ip-172-31-39-107)\
+2020-06-24 14:33:29,708 - INFO - VM ([<Server: ctest-fvn_vm1_name-83898795>]) created on node: (ip-172-31-39-107), Zone: (nova:ip-172-31-39-107)\
+2020-06-24 14:33:29,822 - INFO - Creating Floating IP pool ctest-some-pool-36237593 in API Server\
+2020-06-24 14:33:30,231 - INFO - Verification for FIP pool ctest-some-pool-36237593 in API Server passed\
+2020-06-24 14:33:30,245 - INFO - Verification for FIP pool ctest-some-pool-36237593 in Control-node passed\
+2020-06-24 14:33:30,245 - INFO - Waiting for VM ctest-vn1_vm1_name-61015987 to be up..\
+2020-06-24 14:33:35,605 - INFO - VM name : ctest-vn1_vm1_name-61015987\
+2020-06-24 14:33:49,433 - INFO - Ping to Metadata IP 169.254.0.8 of VM ctest-vn1_vm1_name-61015987 passed\
+2020-06-24 14:33:55,157 - INFO - Waiting for VM ctest-fvn_vm1_name-83898795 to be up..\
+2020-06-24 14:33:55,302 - INFO - VM name : ctest-fvn_vm1_name-83898795\
+2020-06-24 14:33:56,739 - INFO - Ping to Metadata IP 169.254.0.9 of VM ctest-fvn_vm1_name-83898795 passed\
+2020-06-24 14:33:57,044 - INFO - FIP 165.42.76.196 verification for passed on all Control-nodes\
+2020-06-24 14:33:57,045 - INFO - FIP ID 8168f7d4-9b8c-43f6-b23c-ba635912a28e(165.42.76.196) validation in Control node passed\
+2020-06-24 14:33:57,075 - INFO - FIP ID 8168f7d4-9b8c-43f6-b23c-ba635912a28e(165.42.76.196) validation in agents passed\
+2020-06-24 14:33:57,088 - INFO - FIP ID 8168f7d4-9b8c-43f6-b23c-ba635912a28e(165.42.76.196) validation in API Server passed\
+2020-06-24 14:34:00,384 - INFO - Ping to IP 165.42.76.195 from VM ctest-vn1_vm1_name-61015987 passed\
+2020-06-24 14:34:00,528 - INFO - Deleting the FIP pool ctest-some-pool-36237593\
+2020-06-24 14:34:00,604 - INFO - Deleting VM ctest-fvn_vm1_name-83898795\
+2020-06-24 14:34:00,695 - INFO - Deleting VM ctest-vn1_vm1_name-61015987\
+2020-06-24 14:34:00,796 - INFO - Deleting VN ctest-vn1-24848140 \
+2020-06-24 14:34:00,847 - WARNING - Deleting VN ctest-vn1-24848140 failed..Will retry\
+2020-06-24 14:34:03,168 - INFO - Validated that VN ctest-vn1-24848140 is not found in API Server\
+2020-06-24 14:34:03,181 - INFO - Validated that VN ctest-vn1-24848140 is not in any agent\
+2020-06-24 14:34:03,198 - INFO - Validated that Routing instances and Config db in Control-nodes does not have VN ctest-vn1-24848140 info\
+2020-06-24 14:34:03,198 - INFO - Deleting VN ctest-fvn-27154895 \
+2020-06-24 14:34:03,414 - INFO - Validated that VN ctest-fvn-27154895 is not found in API Server\
+2020-06-24 14:34:03,426 - INFO - Validated that VN ctest-fvn-27154895 is not in any agent\
+2020-06-24 14:34:03,444 - INFO - Validated that Routing instances and Config db in Control-nodes does not have VN ctest-fvn-27154895 info\
+2020-06-24 14:34:03,860 - INFO - END TEST : test_floating_ip : PASSED[0:00:40]\
+2020-06-24 14:34:03,860 - INFO - --------------------------------------------------------------------------------\
+2020-06-24 14:34:04,576 - INFO - Deleted project: ctest-FloatingipBasicTestSanity-90886386, ID : 816ac30e-3d55-4a3c-baff-930255be957b \
+2020-06-24 14:34:04,850 - INFO - Reading existing Domain with UUID f4984a98-90c7-478d-b9b5-43e122759627\
+2020-06-24 14:34:04,865 - INFO - Using existing domain [u'admin_domain'](f4984a98-90c7-478d-b9b5-43e122759627)\
+2020-06-24 14:34:05,052 - INFO - Project ctest-TestHeat-18873657 not found, creating it\
+2020-06-24 14:34:05,425 - INFO - Created Project:ctest-TestHeat-18873657, ID : f0d726f3-4e65-43f8-9252-fdb996166a41 \
+2020-06-24 14:34:07,048 - INFO - ctest-TestHeat-18873657 user already added to project\
+2020-06-24 14:34:07,050 - INFO - ================================================================================\
+2020-06-24 14:34:07,050 - INFO - STARTING TEST    : test_heat_stacks_list\
+2020-06-24 14:34:07,050 - INFO - TEST DESCRIPTION : \
+            Validate installation of heat\
+            This issues a command to list all the heat-stacks\
+            \
+2020-06-24 14:34:07,464 - INFO - Initial checks done. Running the testcase now\
+2020-06-24 14:34:07,464 - INFO - \
+2020-06-24 14:34:07,980 - INFO - The following are the stacks currently : []\
+2020-06-24 14:34:08,346 - INFO - END TEST : test_heat_stacks_list : PASSED[0:00:01]\
+2020-06-24 14:34:08,346 - INFO - --------------------------------------------------------------------------------\
+2020-06-24 14:34:09,079 - INFO - Deleted project: ctest-TestHeat-18873657, ID : f0d726f3-4e65-43f8-9252-fdb996166a41 \
+2020-06-24 14:34:09,332 - INFO - Reading existing Domain with UUID f4984a98-90c7-478d-b9b5-43e122759627\
+2020-06-24 14:34:09,346 - INFO - Using existing domain [u'admin_domain'](f4984a98-90c7-478d-b9b5-43e122759627)\
+2020-06-24 14:34:09,524 - INFO - Project ctest-TestRoutersBasic-69172483 not found, creating it\
+2020-06-24 14:34:09,927 - INFO - Created Project:ctest-TestRoutersBasic-69172483, ID : 907c3fad-8a37-490a-a549-37783592053f \
+2020-06-24 14:34:11,516 - INFO - ================================================================================\
+2020-06-24 14:34:11,516 - INFO - STARTING TEST    : test_basic_snat_behavior_without_external_connectivity\
+2020-06-24 14:34:11,516 - INFO - TEST DESCRIPTION : Create an external network, a router\
+        set router-gateway to external network\
+        launch a private network and attach it to router\
+        validate left vm pinging right vm through Snat\
+       \
+2020-06-24 14:34:11,889 - INFO - Initial checks done. Running the testcase now\
+2020-06-24 14:34:11,889 - INFO - \
+2020-06-24 14:34:12,807 - INFO - Default SG to be edited for allow all on project: ctest-TestRoutersBasic-69172483\
+2020-06-24 14:34:12,825 - INFO - Adding rules to the default security group in Project ctest-TestRoutersBasic-69172483\
+2020-06-24 14:34:14,265 - INFO - Created VN ctest-vn-92002086\
+2020-06-24 14:34:14,892 - INFO - Created VN ctest-ext_vn-90696118\
+2020-06-24 14:34:15,552 - INFO - VM ([<Server: ctest-TestRoutersBasic-69172483-32029814>]) created on node: (ip-172-31-39-107), Zone: (nova:ip-172-31-39-107)\
+2020-06-24 14:34:16,318 - INFO - VM ([<Server: ctest-TestRoutersBasic-69172483-53282865>]) created on node: (ip-172-31-39-107), Zone: (nova:ip-172-31-39-107)\
+2020-06-24 14:34:16,473 - INFO - Setting gateway for router fb383df1-f2ed-4fe5-8e9a-1f055f0a06a7 to network 64f309ac-a0b5-4ab7-bee7-716b50223166 \
+2020-06-24 14:34:16,568 - INFO - Adding interface with subnet_id 6eadab45-fd9c-448e-b3f6-16bb0a56d256, port_id None to router fb383df1-f2ed-4fe5-8e9a-1f055f0a06a7\
+2020-06-24 14:34:17,276 - INFO - Waiting for VM ctest-TestRoutersBasic-69172483-32029814 to be up..\
+2020-06-24 14:34:22,812 - INFO - VM name : ctest-TestRoutersBasic-69172483-32029814\
+2020-06-24 14:34:43,399 - INFO - Ping to Metadata IP 169.254.0.7 of VM ctest-TestRoutersBasic-69172483-32029814 passed\
+2020-06-24 14:34:43,710 - INFO - Waiting for VM ctest-TestRoutersBasic-69172483-53282865 to be up..\
+2020-06-24 14:34:43,990 - INFO - VM name : ctest-TestRoutersBasic-69172483-53282865\
+2020-06-24 14:34:47,635 - INFO - Ping to Metadata IP 169.254.0.8 of VM ctest-TestRoutersBasic-69172483-53282865 passed\
+2020-06-24 14:34:51,369 - INFO - Ping to IP 96.172.227.195 from VM ctest-TestRoutersBasic-69172483-32029814 passed\
+2020-06-24 14:34:51,370 - INFO - Deleting interface with subnet_id 6eadab45-fd9c-448e-b3f6-16bb0a56d256, port_id None from router fb383df1-f2ed-4fe5-8e9a-1f055f0a06a7\
+2020-06-24 14:34:51,798 - INFO - Deleting VM ctest-TestRoutersBasic-69172483-53282865\
+2020-06-24 14:34:51,960 - INFO - Deleting VM ctest-TestRoutersBasic-69172483-32029814\
+2020-06-24 14:34:52,103 - INFO - Deleting VN ctest-ext_vn-90696118 \
+2020-06-24 14:34:52,294 - WARNING - Deleting VN ctest-ext_vn-90696118 failed..Will retry\
+2020-06-24 14:34:54,650 - INFO - Deleting VN ctest-vn-92002086 \
+2020-06-24 14:34:55,385 - INFO - END TEST : test_basic_snat_behavior_without_external_connectivity : PASSED[0:00:44]\
+2020-06-24 14:34:55,385 - INFO - --------------------------------------------------------------------------------\
+2020-06-24 14:34:56,435 - INFO - Deleted project: ctest-TestRoutersBasic-69172483, ID : 907c3fad-8a37-490a-a549-37783592053f \
+2020-06-24 14:34:56,834 - INFO - Reading existing Domain with UUID f4984a98-90c7-478d-b9b5-43e122759627\
+2020-06-24 14:34:56,854 - INFO - Using existing domain [u'admin_domain'](f4984a98-90c7-478d-b9b5-43e122759627)\
+2020-06-24 14:34:57,089 - INFO - Project ctest-TestBasicPolicyIpv4v6-82636148 not found, creating it\
+2020-06-24 14:34:57,631 - INFO - Created Project:ctest-TestBasicPolicyIpv4v6-82636148, ID : bb342bdc-334a-4fff-8853-0ddb194edd0c \
+2020-06-24 14:34:59,679 - INFO - ================================================================================\
+2020-06-24 14:34:59,680 - INFO - STARTING TEST    : test_basic_policy_allow_deny\
+2020-06-24 14:34:59,680 - INFO - TEST DESCRIPTION : \
+        Create 2 Vns and allow icmp traffic between them and validate with pings\
+        Update the policy to deny the same traffic\
+        Check that pings fail\
+        \
+2020-06-24 14:35:00,056 - INFO - Initial checks done. Running the testcase now\
+2020-06-24 14:35:00,056 - INFO - \
+2020-06-24 14:35:03,381 - INFO - Created VN ctest-vn-93434290\
+2020-06-24 14:35:05,424 - INFO - Created VN ctest-vn-74955733\
+2020-06-24 14:35:06,478 - INFO - Verified VN network id 22 for VN 827b45fa-bd26-4520-a9ff-e0909d469df6\
+2020-06-24 14:35:06,478 - INFO - Verifications in API Server for VN ctest-vn-93434290 passed\
+2020-06-24 14:35:06,532 - INFO - On all control nodes, Config, RI and RT verification for VN ctest-vn-93434290 passed\
+2020-06-24 14:35:06,616 - INFO - VN ctest-vn-93434290 Policy verification: verify_vn_policy_in_api_server, status: True\
+2020-06-24 14:35:06,989 - INFO - Validated that VN admin_domain:ctest-TestBasicPolicyIpv4v6-82636148:ctest-vn-93434290 is found in opserver\
+2020-06-24 14:35:07,136 - INFO - Verified VN network id 23 for VN 71f13e18-0798-45bf-abb7-7f97294bc970\
+2020-06-24 14:35:07,136 - INFO - Verifications in API Server for VN ctest-vn-74955733 passed\
+2020-06-24 14:35:07,183 - INFO - On all control nodes, Config, RI and RT verification for VN ctest-vn-74955733 passed\
+2020-06-24 14:35:07,253 - INFO - VN ctest-vn-74955733 Policy verification: verify_vn_policy_in_api_server, status: True\
+2020-06-24 14:35:07,267 - INFO - Validated that VN admin_domain:ctest-TestBasicPolicyIpv4v6-82636148:ctest-vn-74955733 is found in opserver\
+2020-06-24 14:35:07,285 - INFO - Disabling v6 tests for CI\
+2020-06-24 14:35:07,786 - INFO - Deleted policy ctest-policy-allow-all-29123088\
+2020-06-24 14:35:07,786 - INFO - Deleting VN ctest-vn-74955733 \
+2020-06-24 14:35:08,182 - INFO - Validated that VN ctest-vn-74955733 is not found in API Server\
+2020-06-24 14:35:08,201 - INFO - Validated that VN ctest-vn-74955733 is not in any agent\
+2020-06-24 14:35:08,221 - INFO - Validated that Routing instances and Config db in Control-nodes does not have VN ctest-vn-74955733 info\
+2020-06-24 14:35:08,221 - INFO - Deleting VN ctest-vn-93434290 \
+2020-06-24 14:35:08,483 - INFO - Validated that VN ctest-vn-93434290 is not found in API Server\
+2020-06-24 14:35:08,497 - INFO - Validated that VN ctest-vn-93434290 is not in any agent\
+2020-06-24 14:35:08,515 - INFO - Validated that Routing instances and Config db in Control-nodes does not have VN ctest-vn-93434290 info\
+2020-06-24 14:35:08,910 - INFO - \
+2020-06-24 14:35:08,910 - INFO - END TEST : test_basic_policy_allow_deny : SKIPPED[0:00:09]\
+2020-06-24 14:35:08,911 - INFO - --------------------------------------------------------------------------------\
+2020-06-24 14:35:09,602 - INFO - Deleted project: ctest-TestBasicPolicyIpv4v6-82636148, ID : bb342bdc-334a-4fff-8853-0ddb194edd0c \
+2020-06-24 14:35:09,875 - INFO - Reading existing Domain with UUID f4984a98-90c7-478d-b9b5-43e122759627\
+2020-06-24 14:35:09,890 - INFO - Using existing domain [u'admin_domain'](f4984a98-90c7-478d-b9b5-43e122759627)\
+2020-06-24 14:35:10,020 - INFO - Project ctest-TestBasicPolicy-34794568 not found, creating it\
+2020-06-24 14:35:10,368 - INFO - Created Project:ctest-TestBasicPolicy-34794568, ID : c4cc9f3f-3b50-40ee-b3f6-4101da9af97d \
+2020-06-24 14:35:11,960 - INFO - ================================================================================\
+2020-06-24 14:35:11,961 - INFO - STARTING TEST    : test_basic_policy_allow_deny\
+2020-06-24 14:35:11,961 - INFO - TEST DESCRIPTION : \
+        Create 2 Vns and allow icmp traffic between them and validate with pings\
+        Update the policy to deny the same traffic\
+        Check that pings fail\
+        \
+2020-06-24 14:35:12,360 - INFO - Initial checks done. Running the testcase now\
+2020-06-24 14:35:12,360 - INFO - \
+2020-06-24 14:35:13,502 - INFO - Created VN ctest-vn-37066184\
+2020-06-24 14:35:14,458 - INFO - Created VN ctest-vn-04418382\
+2020-06-24 14:35:15,418 - INFO - Verified VN network id 22 for VN 3a62ef34-cf23-40f0-aee4-ebcce29fadac\
+2020-06-24 14:35:15,418 - INFO - Verifications in API Server for VN ctest-vn-37066184 passed\
+2020-06-24 14:35:15,473 - INFO - On all control nodes, Config, RI and RT verification for VN ctest-vn-37066184 passed\
+2020-06-24 14:35:15,541 - INFO - VN ctest-vn-37066184 Policy verification: verify_vn_policy_in_api_server, status: True\
+2020-06-24 14:35:15,920 - INFO - Validated that VN admin_domain:ctest-TestBasicPolicy-34794568:ctest-vn-37066184 is found in opserver\
+2020-06-24 14:35:16,071 - INFO - Verified VN network id 23 for VN 39e8c46c-4292-4d2f-909a-ff6a38d0de7e\
+2020-06-24 14:35:16,072 - INFO - Verifications in API Server for VN ctest-vn-04418382 passed\
+2020-06-24 14:35:16,119 - INFO - On all control nodes, Config, RI and RT verification for VN ctest-vn-04418382 passed\
+2020-06-24 14:35:16,191 - INFO - VN ctest-vn-04418382 Policy verification: verify_vn_policy_in_api_server, status: True\
+2020-06-24 14:35:16,203 - INFO - Validated that VN admin_domain:ctest-TestBasicPolicy-34794568:ctest-vn-04418382 is found in opserver\
+2020-06-24 14:35:17,259 - INFO - VM ([<Server: ctest-TestBasicPolicy-34794568-73610140>]) created on node: (ip-172-31-39-107), Zone: (nova:ip-172-31-39-107)\
+2020-06-24 14:35:18,317 - INFO - VM ([<Server: ctest-TestBasicPolicy-34794568-54184023>]) created on node: (ip-172-31-39-107), Zone: (nova:ip-172-31-39-107)\
+2020-06-24 14:35:18,317 - INFO - Waiting for VM ctest-TestBasicPolicy-34794568-73610140 to be up..\
+2020-06-24 14:35:23,640 - INFO - VM name : ctest-TestBasicPolicy-34794568-73610140\
+2020-06-24 14:35:41,817 - INFO - Ping to Metadata IP 169.254.0.8 of VM ctest-TestBasicPolicy-34794568-73610140 passed\
+2020-06-24 14:35:42,097 - INFO - Waiting for VM ctest-TestBasicPolicy-34794568-54184023 to be up..\
+2020-06-24 14:35:42,256 - INFO - VM name : ctest-TestBasicPolicy-34794568-54184023\
+2020-06-24 14:35:43,756 - INFO - Ping to Metadata IP 169.254.0.9 of VM ctest-TestBasicPolicy-34794568-54184023 passed\
+2020-06-24 14:35:48,398 - INFO - Ping to IP 93.63.141.195 from VM ctest-TestBasicPolicy-34794568-73610140 passed\
+2020-06-24 14:35:51,731 - WARNING - Ping to IP 93.63.141.195 from VM ctest-TestBasicPolicy-34794568-73610140 failed\
+2020-06-24 14:35:51,731 - INFO - Deleting VM ctest-TestBasicPolicy-34794568-54184023\
+2020-06-24 14:35:51,846 - INFO - Deleting VM ctest-TestBasicPolicy-34794568-73610140\
+2020-06-24 14:35:52,313 - INFO - Deleted policy ctest-policy-allow-all-17088394\
+2020-06-24 14:35:52,313 - INFO - Deleting VN ctest-vn-04418382 \
+2020-06-24 14:35:52,361 - WARNING - Deleting VN ctest-vn-04418382 failed..Will retry\
+2020-06-24 14:35:54,609 - INFO - Validated that VN ctest-vn-04418382 is not found in API Server\
+2020-06-24 14:35:54,623 - INFO - Validated that VN ctest-vn-04418382 is not in any agent\
+2020-06-24 14:35:54,642 - INFO - Validated that Routing instances and Config db in Control-nodes does not have VN ctest-vn-04418382 info\
+2020-06-24 14:35:54,642 - INFO - Deleting VN ctest-vn-37066184 \
+2020-06-24 14:35:54,931 - INFO - Validated that VN ctest-vn-37066184 is not found in API Server\
+2020-06-24 14:35:54,944 - INFO - Validated that VN ctest-vn-37066184 is not in any agent\
+2020-06-24 14:35:54,966 - INFO - Validated that Routing instances and Config db in Control-nodes does not have VN ctest-vn-37066184 info\
+2020-06-24 14:35:55,365 - INFO - END TEST : test_basic_policy_allow_deny : PASSED[0:00:44]\
+2020-06-24 14:35:55,365 - INFO - --------------------------------------------------------------------------------\
+2020-06-24 14:35:56,206 - INFO - Deleted project: ctest-TestBasicPolicy-34794568, ID : c4cc9f3f-3b50-40ee-b3f6-4101da9af97d \
+2020-06-24 14:35:56,555 - INFO - Reading existing Domain with UUID f4984a98-90c7-478d-b9b5-43e122759627\
+2020-06-24 14:35:56,578 - INFO - Using existing domain [u'admin_domain'](f4984a98-90c7-478d-b9b5-43e122759627)\
+2020-06-24 14:35:56,895 - INFO - Project ctest-SecurityGroupBasicRegressionTests1-11155201 not found, creating it\
+2020-06-24 14:35:57,415 - INFO - Created Project:ctest-SecurityGroupBasicRegressionTests1-11155201, ID : 8ff1af76-7605-45b0-972a-10e8a639b86f \
+2020-06-24 14:35:59,244 - INFO - ================================================================================\
+2020-06-24 14:35:59,244 - INFO - STARTING TEST    : test_sec_group_basic\
+2020-06-24 14:35:59,244 - INFO - TEST DESCRIPTION : \
+        Description: Test basic SG features\
+            1. Security group create and delete\
+            2. Create security group with custom rules and then update it for tcp\
+            3. Launch VM with custom created security group and verify\
+            4. Remove secuity group association with VM\
+            5. Add back custom security group to VM and verify\
+            6. Try to delete security group with association to VM. It should fail.\
+            7. Test with ping, which should fail\
+            8. Test with TCP which should pass\
+            9. Update the rules to allow icmp, ping should pass now.\
+        \
+2020-06-24 14:35:59,686 - INFO - Initial checks done. Running the testcase now\
+2020-06-24 14:35:59,686 - INFO - \
+2020-06-24 14:36:00,048 - INFO - Creating Security group: ['admin_domain', 'ctest-SecurityGroupBasicRegressionTests1-11155201', 'ctest-test_sec_group-55422608']\
+2020-06-24 14:36:04,093 - INFO - Security group ctest-test_sec_group-55422608 found in the API Server\
+2020-06-24 14:36:04,167 - INFO - Validated that ACLs for Security group ctest-test_sec_group-55422608 are present in API Server\
+2020-06-24 14:36:04,175 - INFO - Validated that Security group ctest-test_sec_group-55422608 is found in control node 172.31.39.107\
+2020-06-24 14:36:04,183 - INFO - Validated SG ctest-test_sec_group-55422608 in Control nodes\
+2020-06-24 14:36:04,184 - INFO - Deleting Security group: ['admin_domain', 'ctest-SecurityGroupBasicRegressionTests1-11155201', 'ctest-test_sec_group-55422608']\
+2020-06-24 14:36:04,294 - INFO - Security group: ['admin_domain', 'ctest-SecurityGroupBasicRegressionTests1-11155201', 'ctest-test_sec_group-55422608'] deleted successfully.\
+2020-06-24 14:36:04,359 - INFO - Security group ctest-test_sec_group-55422608 removed from the API Server\
+2020-06-24 14:36:04,440 - INFO - security group ctest-test_sec_group-55422608 removed from Control-node 172.31.39.107\
+2020-06-24 14:36:04,449 - INFO - Validated that SG ctest-test_sec_group-55422608 is not in control nodes\
+2020-06-24 14:36:04,458 - INFO - Creating Security group: ['admin_domain', 'ctest-SecurityGroupBasicRegressionTests1-11155201', 'ctest-test_sec_group-55422608']\
+2020-06-24 14:36:08,242 - INFO - Security group ctest-test_sec_group-55422608 found in the API Server\
+2020-06-24 14:36:08,308 - INFO - Validated that ACLs for Security group ctest-test_sec_group-55422608 are present in API Server\
+2020-06-24 14:36:08,316 - INFO - Validated that Security group ctest-test_sec_group-55422608 is found in control node 172.31.39.107\
+2020-06-24 14:36:08,325 - INFO - Validated SG ctest-test_sec_group-55422608 in Control nodes\
+2020-06-24 14:36:10,874 - INFO - Created VN ctest-SecurityGroupBasicRegressionTests1-11155201-03192982\
+2020-06-24 14:36:11,118 - INFO - Verified VN network id 22 for VN c6eb7b9e-810d-4727-9129-179706ca2ac7\
+2020-06-24 14:36:11,119 - INFO - Verifications in API Server for VN ctest-SecurityGroupBasicRegressionTests1-11155201-03192982 passed\
+2020-06-24 14:36:11,166 - INFO - On all control nodes, Config, RI and RT verification for VN ctest-SecurityGroupBasicRegressionTests1-11155201-03192982 passed\
+2020-06-24 14:36:11,675 - INFO - Validated that VN admin_domain:ctest-SecurityGroupBasicRegressionTests1-11155201:ctest-SecurityGroupBasicRegressionTests1-11155201-03192982 is found in opserver\
+2020-06-24 14:36:12,667 - INFO - VM ([<Server: ctest-SecurityGroupBasicRegressionTests1-11155201-62059209>]) created on node: (ip-172-31-39-107), Zone: (nova:ip-172-31-39-107)\
+2020-06-24 14:36:13,760 - INFO - VM ([<Server: ctest-SecurityGroupBasicRegressionTests1-11155201-53402406>]) created on node: (ip-172-31-39-107), Zone: (nova:ip-172-31-39-107)\
+2020-06-24 14:36:19,051 - INFO - VM name : ctest-SecurityGroupBasicRegressionTests1-11155201-62059209\
+2020-06-24 14:36:19,584 - INFO - VM ctest-SecurityGroupBasicRegressionTests1-11155201-62059209 verfication in all API Servers passed\
+2020-06-24 14:36:33,387 - INFO - Ping to Metadata IP 169.254.0.8 of VM ctest-SecurityGroupBasicRegressionTests1-11155201-62059209 passed\
+2020-06-24 14:36:33,388 - INFO - VM ctest-SecurityGroupBasicRegressionTests1-11155201-62059209 verifications in Compute nodes passed\
+2020-06-24 14:36:33,648 - INFO - Validated routes of VM ctest-SecurityGroupBasicRegressionTests1-11155201-62059209 in all vrouters\
+2020-06-24 14:36:33,787 - INFO - Verification in Control-nodes for VM ctest-SecurityGroupBasicRegressionTests1-11155201-62059209 passed\
+2020-06-24 14:36:39,931 - INFO - Verifying through opserver in 172.31.39.107\
+2020-06-24 14:36:39,963 - INFO - VM e903a5ab-f23f-47a6-9849-c048698f8032 is present in admin_domain:ctest-SecurityGroupBasicRegressionTests1-11155201:ctest-SecurityGroupBasicRegressionTests1-11155201-03192982\
+2020-06-24 14:36:40,273 - INFO - tap interface admin_domain:ctest-SecurityGroupBasicRegressionTests1-11155201:4d2f9f98-3dc0-4454-8925-8eae2c5985f1 of vm e903a5ab-f23f-47a6-9849-c048698f8032 is present in vrouter ip-172-31-39-107 uve \
+2020-06-24 14:36:40,284 - INFO - VM ctest-SecurityGroupBasicRegressionTests1-11155201-62059209 validations in Opserver passed\
+2020-06-24 14:36:40,285 - INFO - Waiting for VM ctest-SecurityGroupBasicRegressionTests1-11155201-62059209 to be up..\
+2020-06-24 14:36:41,442 - INFO - Ping to Metadata IP 169.254.0.8 of VM ctest-SecurityGroupBasicRegressionTests1-11155201-62059209 passed\
+2020-06-24 14:36:41,899 - INFO - VM name : ctest-SecurityGroupBasicRegressionTests1-11155201-53402406\
+2020-06-24 14:36:42,379 - INFO - VM ctest-SecurityGroupBasicRegressionTests1-11155201-53402406 verfication in all API Servers passed\
+2020-06-24 14:36:43,750 - INFO - Ping to Metadata IP 169.254.0.9 of VM ctest-SecurityGroupBasicRegressionTests1-11155201-53402406 passed\
+2020-06-24 14:36:43,750 - INFO - VM ctest-SecurityGroupBasicRegressionTests1-11155201-53402406 verifications in Compute nodes passed\
+2020-06-24 14:36:43,973 - INFO - Validated routes of VM ctest-SecurityGroupBasicRegressionTests1-11155201-53402406 in all vrouters\
+2020-06-24 14:36:44,082 - INFO - Verification in Control-nodes for VM ctest-SecurityGroupBasicRegressionTests1-11155201-53402406 passed\
+2020-06-24 14:36:44,172 - INFO - Verifying through opserver in 172.31.39.107\
+2020-06-24 14:36:44,202 - INFO - VM e2be1fe9-1bc6-44cd-b037-d6020897a4a6 is present in admin_domain:ctest-SecurityGroupBasicRegressionTests1-11155201:ctest-SecurityGroupBasicRegressionTests1-11155201-03192982\
+2020-06-24 14:36:44,472 - INFO - tap interface admin_domain:ctest-SecurityGroupBasicRegressionTests1-11155201:c6303522-5908-4d02-8613-6677a6f20318 of vm e2be1fe9-1bc6-44cd-b037-d6020897a4a6 is present in vrouter ip-172-31-39-107 uve \
+2020-06-24 14:36:44,485 - INFO - VM ctest-SecurityGroupBasicRegressionTests1-11155201-53402406 validations in Opserver passed\
+2020-06-24 14:36:44,485 - INFO - Waiting for VM ctest-SecurityGroupBasicRegressionTests1-11155201-53402406 to be up..\
+2020-06-24 14:36:45,648 - INFO - Ping to Metadata IP 169.254.0.9 of VM ctest-SecurityGroupBasicRegressionTests1-11155201-53402406 passed\
+2020-06-24 14:36:46,044 - INFO - Validated that SG ctest-test_sec_group-55422608 is bound to VM ctest-SecurityGroupBasicRegressionTests1-11155201-62059209\
+2020-06-24 14:36:46,044 - INFO - Remove security group ctest-test_sec_group-55422608 from VM ctest-SecurityGroupBasicRegressionTests1-11155201-62059209\
+2020-06-24 14:36:46,316 - WARNING - Security group ctest-test_sec_group-55422608 is not attached to the VM ctest-SecurityGroupBasicRegressionTests1-11155201-62059209\
+2020-06-24 14:36:46,655 - INFO - Validated that SG ctest-test_sec_group-55422608 is bound to VM ctest-SecurityGroupBasicRegressionTests1-11155201-62059209\
+2020-06-24 14:36:46,655 - INFO - Try deleting the security group ctest-test_sec_group-55422608 with back ref.\
+2020-06-24 14:36:46,656 - INFO - Deleting Security group: ['admin_domain', 'ctest-SecurityGroupBasicRegressionTests1-11155201', 'ctest-test_sec_group-55422608']\
+2020-06-24 14:36:46,691 - INFO - Security Group 2f89e6d0-2489-42f8-b30f-5e7c1dbdf7c1 in use.\
+Neutron server returns request_ids: ['req-fe8cc6cf-9cb8-45ed-9f82-a234afdb944e']\
+2020-06-24 14:36:46,691 - INFO - Not able to delete the security group with back ref as expected\
+2020-06-24 14:36:51,858 - WARNING - Ping to IP 28.43.187.132 from VM ctest-SecurityGroupBasicRegressionTests1-11155201-62059209 failed\
+2020-06-24 14:36:51,859 - INFO - Ping FAILED as expected\
+2020-06-24 14:36:53,633 - INFO - File transfer verification for file size 100 passed on the VM ctest-SecurityGroupBasicRegressionTests1-11155201-53402406\
+2020-06-24 14:36:57,190 - INFO - Ping to IP 28.43.187.132 from VM ctest-SecurityGroupBasicRegressionTests1-11155201-62059209 passed\
+2020-06-24 14:36:57,190 - INFO - Removing the security group from VM ctest-SecurityGroupBasicRegressionTests1-11155201-53402406\
+2020-06-24 14:36:57,472 - INFO - Deleting VM ctest-SecurityGroupBasicRegressionTests1-11155201-53402406\
+2020-06-24 14:36:59,594 - INFO - VM ctest-SecurityGroupBasicRegressionTests1-11155201-53402406 is fully removed in API-Server \
+2020-06-24 14:37:00,096 - INFO - Validated that all vrouters do not  have VMs route for VN admin_domain:ctest-SecurityGroupBasicRegressionTests1-11155201:ctest-SecurityGroupBasicRegressionTests1-11155201-03192982\
+2020-06-24 14:37:00,098 - INFO - VM ctest-SecurityGroupBasicRegressionTests1-11155201-53402406 is removed in Compute, and routes are removed in all compute nodes\
+2020-06-24 14:37:00,157 - INFO - Routes for VM ctest-SecurityGroupBasicRegressionTests1-11155201-53402406 is removed in all control-nodes\
+2020-06-24 14:37:09,699 - INFO - e2be1fe9-1bc6-44cd-b037-d6020897a4a6 vm uve deleted from opserver\
+2020-06-24 14:37:09,699 - INFO - Validated that VM e2be1fe9-1bc6-44cd-b037-d6020897a4a6 is removed from Opserver\
+2020-06-24 14:37:09,699 - INFO - Removing the security group from VM ctest-SecurityGroupBasicRegressionTests1-11155201-62059209\
+2020-06-24 14:37:10,006 - INFO - Deleting VM ctest-SecurityGroupBasicRegressionTests1-11155201-62059209\
+2020-06-24 14:37:12,119 - INFO - VM ctest-SecurityGroupBasicRegressionTests1-11155201-62059209 is fully removed in API-Server \
+2020-06-24 14:37:12,394 - INFO - Validated that all vrouters do not  have VMs route for VN admin_domain:ctest-SecurityGroupBasicRegressionTests1-11155201:ctest-SecurityGroupBasicRegressionTests1-11155201-03192982\
+2020-06-24 14:37:12,395 - INFO - VM ctest-SecurityGroupBasicRegressionTests1-11155201-62059209 is removed in Compute, and routes are removed in all compute nodes\
+2020-06-24 14:37:12,452 - INFO - Routes for VM ctest-SecurityGroupBasicRegressionTests1-11155201-62059209 is removed in all control-nodes\
+2020-06-24 14:37:40,751 - INFO - e903a5ab-f23f-47a6-9849-c048698f8032 vm uve deleted from opserver\
+2020-06-24 14:37:40,751 - INFO - Validated that VM e903a5ab-f23f-47a6-9849-c048698f8032 is removed from Opserver\
+2020-06-24 14:37:40,752 - INFO - Deleting VN ctest-SecurityGroupBasicRegressionTests1-11155201-03192982 \
+2020-06-24 14:37:40,952 - INFO - Validated that VN ctest-SecurityGroupBasicRegressionTests1-11155201-03192982 is not found in API Server\
+2020-06-24 14:37:40,964 - INFO - Validated that VN ctest-SecurityGroupBasicRegressionTests1-11155201-03192982 is not in any agent\
+2020-06-24 14:37:40,980 - INFO - Validated that Routing instances and Config db in Control-nodes does not have VN ctest-SecurityGroupBasicRegressionTests1-11155201-03192982 info\
+2020-06-24 14:37:40,980 - INFO - Deleting Security group: ['admin_domain', 'ctest-SecurityGroupBasicRegressionTests1-11155201', 'ctest-test_sec_group-55422608']\
+2020-06-24 14:37:41,066 - INFO - Security group: ['admin_domain', 'ctest-SecurityGroupBasicRegressionTests1-11155201', 'ctest-test_sec_group-55422608'] deleted successfully.\
+2020-06-24 14:37:41,134 - INFO - Security group ctest-test_sec_group-55422608 removed from the API Server\
+2020-06-24 14:37:41,209 - INFO - security group ctest-test_sec_group-55422608 removed from Control-node 172.31.39.107\
+2020-06-24 14:37:41,215 - INFO - Validated that SG ctest-test_sec_group-55422608 is not in control nodes\
+2020-06-24 14:37:41,565 - INFO - END TEST : test_sec_group_basic : PASSED[0:01:42]\
+2020-06-24 14:37:41,566 - INFO - --------------------------------------------------------------------------------\
+2020-06-24 14:37:42,210 - INFO - Deleted project: ctest-SecurityGroupBasicRegressionTests1-11155201, ID : 8ff1af76-7605-45b0-972a-10e8a639b86f \
+2020-06-24 14:37:42,470 - INFO - Reading existing Domain with UUID f4984a98-90c7-478d-b9b5-43e122759627\
+2020-06-24 14:37:42,485 - INFO - Using existing domain [u'admin_domain'](f4984a98-90c7-478d-b9b5-43e122759627)\
+2020-06-24 14:37:42,612 - INFO - Project ctest-TestSvcRegr-69783536 not found, creating it\
+2020-06-24 14:37:42,957 - INFO - Created Project:ctest-TestSvcRegr-69783536, ID : 1cfd1fec-f794-420b-989e-946e09367957 \
+2020-06-24 14:37:44,490 - INFO - ================================================================================\
+2020-06-24 14:37:44,490 - INFO - STARTING TEST    : test_svc_in_network_datapath\
+2020-06-24 14:37:44,886 - INFO - Initial checks done. Running the testcase now\
+2020-06-24 14:37:44,886 - INFO - \
+2020-06-24 14:37:46,199 - INFO - Created VN ctest-mgmt_vn-03661743\
+2020-06-24 14:37:46,731 - INFO - Verified VN network id 15 for VN 918cfa89-b5e7-42ed-8bb1-e7d1e782c2d3\
+2020-06-24 14:37:46,731 - INFO - Verifications in API Server for VN ctest-mgmt_vn-03661743 passed\
+2020-06-24 14:37:46,773 - INFO - On all control nodes, Config, RI and RT verification for VN ctest-mgmt_vn-03661743 passed\
+2020-06-24 14:37:47,195 - INFO - Validated that VN admin_domain:ctest-TestSvcRegr-69783536:ctest-mgmt_vn-03661743 is found in opserver\
+2020-06-24 14:37:47,907 - INFO - Created VN ctest-left_vn-89844058\
+2020-06-24 14:37:48,107 - INFO - Verified VN network id 22 for VN c1050501-016e-4430-883e-d1fa0e655c0d\
+2020-06-24 14:37:48,107 - INFO - Verifications in API Server for VN ctest-left_vn-89844058 passed\
+2020-06-24 14:37:48,149 - INFO - On all control nodes, Config, RI and RT verification for VN ctest-left_vn-89844058 passed\
+2020-06-24 14:37:48,224 - INFO - Validated that VN admin_domain:ctest-TestSvcRegr-69783536:ctest-left_vn-89844058 is found in opserver\
+2020-06-24 14:37:48,762 - INFO - Created VN ctest-right_vn-61255335\
+2020-06-24 14:37:48,971 - INFO - Verified VN network id 23 for VN 3d36cd3e-c7f8-4411-8006-d8cfd1793b7b\
+2020-06-24 14:37:48,971 - INFO - Verifications in API Server for VN ctest-right_vn-61255335 passed\
+2020-06-24 14:37:49,016 - INFO - On all control nodes, Config, RI and RT verification for VN ctest-right_vn-61255335 passed\
+2020-06-24 14:37:49,089 - INFO - Validated that VN admin_domain:ctest-TestSvcRegr-69783536:ctest-right_vn-61255335 is found in opserver\
+2020-06-24 14:37:49,704 - INFO - VM ([<Server: ctest-left_vm-39769084>]) created on node: (ip-172-31-39-107), Zone: (nova:ip-172-31-39-107)\
+2020-06-24 14:37:50,270 - INFO - VM ([<Server: ctest-right_vm-77148000>]) created on node: (ip-172-31-39-107), Zone: (nova:ip-172-31-39-107)\
+2020-06-24 14:37:51,539 - INFO - VM ([<Server: ctest-pt_svm0-53891208>]) created on node: (ip-172-31-39-107), Zone: (nova:ip-172-31-39-107)\
+2020-06-24 14:37:51,540 - INFO - Waiting for VM ctest-pt_svm0-53891208 to be up..\
+2020-06-24 14:37:56,780 - INFO - VM name : ctest-pt_svm0-53891208\
+2020-06-24 14:38:29,765 - INFO - Ping to Metadata IP 169.254.0.9 of VM ctest-pt_svm0-53891208 passed\
+2020-06-24 14:38:57,259 - INFO - Waiting for VM ctest-left_vm-39769084 to be up..\
+2020-06-24 14:38:57,467 - INFO - VM name : ctest-left_vm-39769084\
+2020-06-24 14:38:59,004 - INFO - Ping to Metadata IP 169.254.0.7 of VM ctest-left_vm-39769084 passed\
+2020-06-24 14:38:59,284 - INFO - Waiting for VM ctest-right_vm-77148000 to be up..\
+2020-06-24 14:38:59,421 - INFO - VM name : ctest-right_vm-77148000\
+2020-06-24 14:39:00,911 - INFO - Ping to Metadata IP 169.254.0.8 of VM ctest-right_vm-77148000 passed\
+2020-06-24 14:39:01,326 - INFO - Attaching policy ctest-policy-66550583 to vn ctest-left_vn-89844058\
+2020-06-24 14:39:01,487 - INFO - Attaching policy ctest-policy-66550583 to vn ctest-right_vn-61255335\
+2020-06-24 14:39:04,973 - INFO - Ping to Metadata IP 169.254.0.10 of VM ctest-pt_svm0-53891208 passed\
+2020-06-24 14:39:05,568 - INFO - VM ctest-pt_svm0-53891208 verifications in Compute nodes passed\
+2020-06-24 14:39:05,682 - INFO - VMI and/or RI refs are present for VN admin_domain:ctest-TestSvcRegr-69783536:ctest-left_vn-89844058\
+2020-06-24 14:39:05,702 - INFO - VMI and/or RI refs are present for VN admin_domain:ctest-TestSvcRegr-69783536:ctest-right_vn-61255335\
+2020-06-24 14:39:05,749 - INFO - Route to 185.152.29.3 seen in VRF:7 on ip-172-31-39-107.englab.juniper.net, and SI ctest-si-94621008 is seen as the NH\
+2020-06-24 14:39:05,795 - INFO - Route to 123.99.174.195 seen in VRF:8 on ip-172-31-39-107.englab.juniper.net, and SI ctest-si-94621008 is seen as the NH\
+2020-06-24 14:39:09,976 - INFO - Ping to IP 185.152.29.3 from VM ctest-left_vm-39769084 passed\
+2020-06-24 14:39:09,976 - INFO - Dettaching policy ctest-policy-66550583 from vn ctest-right_vn-61255335\
+2020-06-24 14:39:10,076 - INFO - Dettaching policy ctest-policy-66550583 from vn ctest-left_vn-89844058\
+2020-06-24 14:39:10,269 - INFO - Deleted policy ctest-policy-66550583\
+2020-06-24 14:39:10,371 - INFO - Deleted SI ['admin_domain', 'ctest-TestSvcRegr-69783536', 'ctest-si-94621008']\
+2020-06-24 14:39:10,523 - INFO - Deleting VM ctest-pt_svm0-53891208\
+2020-06-24 14:39:10,712 - INFO - Service template: ['admin_domain', 'ctest-service_template_1-72175420'] deleted successfully.\
+2020-06-24 14:39:10,713 - INFO - Deleting VM ctest-right_vm-77148000\
+2020-06-24 14:39:10,808 - INFO - Deleting VM ctest-left_vm-39769084\
+2020-06-24 14:39:10,893 - INFO - Deleting VN ctest-right_vn-61255335 \
+2020-06-24 14:39:10,940 - WARNING - Deleting VN ctest-right_vn-61255335 failed..Will retry\
+2020-06-24 14:39:12,992 - WARNING - Deleting VN ctest-right_vn-61255335 failed..Will retry\
+2020-06-24 14:39:15,195 - INFO - Validated that VN ctest-right_vn-61255335 is not found in API Server\
+2020-06-24 14:39:15,208 - INFO - Validated that VN ctest-right_vn-61255335 is not in any agent\
+2020-06-24 14:39:15,225 - INFO - Validated that Routing instances and Config db in Control-nodes does not have VN ctest-right_vn-61255335 info\
+2020-06-24 14:39:15,225 - INFO - Deleting VN ctest-left_vn-89844058 \
+2020-06-24 14:39:15,427 - INFO - Validated that VN ctest-left_vn-89844058 is not found in API Server\
+2020-06-24 14:39:15,438 - INFO - Validated that VN ctest-left_vn-89844058 is not in any agent\
+2020-06-24 14:39:15,454 - INFO - Validated that Routing instances and Config db in Control-nodes does not have VN ctest-left_vn-89844058 info\
+2020-06-24 14:39:15,454 - INFO - Deleting VN ctest-mgmt_vn-03661743 \
+2020-06-24 14:39:15,644 - INFO - Validated that VN ctest-mgmt_vn-03661743 is not found in API Server\
+2020-06-24 14:39:15,655 - INFO - Validated that VN ctest-mgmt_vn-03661743 is not in any agent\
+2020-06-24 14:39:15,671 - INFO - Validated that Routing instances and Config db in Control-nodes does not have VN ctest-mgmt_vn-03661743 info\
+2020-06-24 14:39:16,033 - INFO - \
+2020-06-24 14:39:16,033 - INFO - END TEST : test_svc_in_network_datapath : PASSED[0:01:32]\
+2020-06-24 14:39:16,034 - INFO - --------------------------------------------------------------------------------\
+2020-06-24 14:39:16,701 - INFO - Deleted project: ctest-TestSvcRegr-69783536, ID : 1cfd1fec-f794-420b-989e-946e09367957 \
+2020-06-24 14:39:17,045 - INFO - Reading existing Domain with UUID f4984a98-90c7-478d-b9b5-43e122759627\
+2020-06-24 14:39:17,060 - INFO - Using existing domain [u'admin_domain'](f4984a98-90c7-478d-b9b5-43e122759627)\
+2020-06-24 14:39:17,228 - INFO - Project ctest-TestvDNSBasic0-12055186 not found, creating it\
+2020-06-24 14:39:17,508 - INFO - Created Project:ctest-TestvDNSBasic0-12055186, ID : 07ba8139-9201-4db1-bfcc-0e95442252a8 \
+2020-06-24 14:39:19,051 - INFO - ================================================================================\
+2020-06-24 14:39:19,051 - INFO - STARTING TEST    : test_vdns_ping_same_vn\
+2020-06-24 14:39:19,052 - INFO - TEST DESCRIPTION :  \
+        Test:- Test vdns functionality. On VM launch agent should dynamically update dns records to dns agent\
+            1.  Create vDNS server \
+            2.  Create IPAM using above vDNS data \
+            3.  Create VN using above IPAM and launch 2 VM's within it \
+            4.  Ping between these 2 VM's using dns name \
+            5.  Try to delete vDNS server which has IPAM back-reference[Negative case] \
+            6.  Add CNAME VDNS record for vm1-test and verify we able to ping by alias name \
+        Pass criteria: Step 4,5 and 6 should pass\
+         \
+        Maintainer: cf-test@juniper.net\
+        \
+2020-06-24 14:39:19,423 - INFO - Initial checks done. Running the testcase now\
+2020-06-24 14:39:19,423 - INFO - \
+2020-06-24 14:39:20,161 - INFO - Using existing project [u'admin_domain', u'ctest-TestvDNSBasic0-12055186'](07ba8139-9201-4db1-bfcc-0e95442252a8)\
+2020-06-24 14:39:21,482 - INFO - Created VN ctest-vn1-vdns-87471256\
+2020-06-24 14:39:22,230 - INFO - VM ([<Server: ctest-vm1-test-60178836>]) created on node: (ip-172-31-39-107), Zone: (nova:ip-172-31-39-107)\
+2020-06-24 14:39:22,230 - INFO - Waiting for VM ctest-vm1-test-60178836 to be up..\
+2020-06-24 14:39:27,406 - INFO - VM name : ctest-vm1-test-60178836\
+2020-06-24 14:39:37,175 - INFO - Ping to Metadata IP 169.254.0.7 of VM ctest-vm1-test-60178836 passed\
+2020-06-24 14:39:42,172 - INFO - Ping to IP ctest-vm1-test-60178836 from VM ctest-vm1-test-60178836 passed\
+2020-06-24 14:39:42,974 - INFO - VM ([<Server: ctest-vm2-test-65531480>]) created on node: (ip-172-31-39-107), Zone: (nova:ip-172-31-39-107)\
+2020-06-24 14:39:42,975 - INFO - Waiting for VM ctest-vm2-test-65531480 to be up..\
+2020-06-24 14:39:48,171 - INFO - VM name : ctest-vm2-test-65531480\
+2020-06-24 14:39:57,894 - INFO - Ping to Metadata IP 169.254.0.8 of VM ctest-vm2-test-65531480 passed\
+2020-06-24 14:40:02,853 - INFO - Ping to IP ctest-vm2-test-65531480 from VM ctest-vm2-test-65531480 passed\
+2020-06-24 14:40:05,333 - INFO - Ping to IP ctest-vm2-test-65531480 from VM ctest-vm1-test-60178836 passed\
+2020-06-24 14:40:05,333 - INFO - Try deleting the VDNS entry ctest-vdns1-68717595 with back ref of ipam.\
+2020-06-24 14:40:05,352 - INFO - Deletion of the vdns entry failed with back ref of ipam as expected\
+2020-06-24 14:40:05,353 - INFO - Add CNAME VDNS record for ctest-vm1-test-60178836 and verify we able to ping by alias name\
+2020-06-24 14:40:05,396 - INFO - In verify_on_setup\
+2020-06-24 14:40:05,408 - INFO - Verify VDNS record  is shown in the API server\
+2020-06-24 14:40:05,445 - INFO - Verify VDNS record  is shown in the control node\
+2020-06-24 14:40:05,887 - WARNING - Ping to IP vm1-test-alias from VM ctest-vm1-test-60178836 failed\
+2020-06-24 14:40:07,325 - WARNING - Ping to IP vm1-test-alias from VM ctest-vm1-test-60178836 failed\
+2020-06-24 14:40:10,830 - INFO - Ping to IP vm1-test-alias from VM ctest-vm1-test-60178836 passed\
+2020-06-24 14:40:10,874 - INFO - VDNS record info: admin_domain:ctest-vdns1-68717595:test-rec deleted successfully.\
+2020-06-24 14:40:10,874 - INFO - Deleting VM ctest-vm2-test-65531480\
+2020-06-24 14:40:10,963 - INFO - Deleting VM ctest-vm1-test-60178836\
+2020-06-24 14:40:11,061 - INFO - Deleting VN ctest-vn1-vdns-87471256 \
+2020-06-24 14:40:11,108 - WARNING - Deleting VN ctest-vn1-vdns-87471256 failed..Will retry\
+2020-06-24 14:40:13,362 - INFO - VDNS info: ['admin_domain', u'ctest-vdns1-68717595'] deleted successfully.\
+2020-06-24 14:40:13,389 - INFO - VDNS information ctest-vdns1-68717595 removed from the API Server\
+2020-06-24 14:40:13,395 - INFO - VDNS information ctest-vdns1-68717595 removed in the Control node\
+2020-06-24 14:40:13,791 - INFO - END TEST : test_vdns_ping_same_vn : PASSED[0:00:54]\
+2020-06-24 14:40:13,791 - INFO - --------------------------------------------------------------------------------\
+2020-06-24 14:40:14,535 - INFO - Deleted project: ctest-TestvDNSBasic0-12055186, ID : 07ba8139-9201-4db1-bfcc-0e95442252a8 \
+2020-06-24 14:40:14,802 - INFO - Reading existing Domain with UUID f4984a98-90c7-478d-b9b5-43e122759627\
+2020-06-24 14:40:14,821 - INFO - Using existing domain [u'admin_domain'](f4984a98-90c7-478d-b9b5-43e122759627)\
+2020-06-24 14:40:15,016 - INFO - Project ctest-TestBasicVMVNx-63847888 not found, creating it\
+2020-06-24 14:40:15,331 - INFO - Created Project:ctest-TestBasicVMVNx-63847888, ID : 0aced1b3-1869-4fb9-815f-b776421d15e9 \
+2020-06-24 14:40:16,957 - INFO - ================================================================================\
+2020-06-24 14:40:16,957 - INFO - STARTING TEST    : test_vm_file_trf_scp_tests\
+2020-06-24 14:40:16,957 - INFO - TEST DESCRIPTION : \
+        Description: Test to validate File Transfer using scp between VMs. Files of different sizes.\
+        Test steps:\
+                1. Creating vm's - vm1 and vm2 and a Vn - vn222\
+                2. Transfer file from vm1 to vm2 with diferrent file sizes using scp\
+                3. file sizes - 64,1202,2210,10000\
+                4. verify files present in vm2 match with the size of the file sent.\
+        Pass criteria: File in vm2 should match with the transferred file size from vm1\
+\
+        Maintainer : ganeshahv@juniper.net\
+        \
+2020-06-24 14:40:17,346 - INFO - Initial checks done. Running the testcase now\
+2020-06-24 14:40:17,346 - INFO - \
+2020-06-24 14:40:18,415 - INFO - Created VN ctest-vn-92346271\
+2020-06-24 14:40:19,420 - INFO - VM ([<Server: ctest-TestBasicVMVNx-63847888-38546283>]) created on node: (ip-172-31-39-107), Zone: (nova:ip-172-31-39-107)\
+2020-06-24 14:40:20,284 - INFO - VM ([<Server: ctest-TestBasicVMVNx-63847888-20226136>]) created on node: (ip-172-31-39-107), Zone: (nova:ip-172-31-39-107)\
+2020-06-24 14:40:20,284 - INFO - Waiting for VM ctest-TestBasicVMVNx-63847888-38546283 to be up..\
+2020-06-24 14:40:25,746 - INFO - VM name : ctest-TestBasicVMVNx-63847888-38546283\
+2020-06-24 14:40:42,059 - INFO - Ping to Metadata IP 169.254.0.7 of VM ctest-TestBasicVMVNx-63847888-38546283 passed\
+2020-06-24 14:40:42,348 - INFO - Waiting for VM ctest-TestBasicVMVNx-63847888-20226136 to be up..\
+2020-06-24 14:40:42,490 - INFO - VM name : ctest-TestBasicVMVNx-63847888-20226136\
+2020-06-24 14:40:43,965 - INFO - Ping to Metadata IP 169.254.0.8 of VM ctest-TestBasicVMVNx-63847888-20226136 passed\
+2020-06-24 14:40:44,237 - INFO - scp_file_transfer_cirros not posible here\
+2020-06-24 14:40:44,237 - INFO - Deleting VM ctest-TestBasicVMVNx-63847888-20226136\
+2020-06-24 14:40:44,324 - INFO - Deleting VM ctest-TestBasicVMVNx-63847888-38546283\
+2020-06-24 14:40:44,416 - INFO - Deleting VN ctest-vn-92346271 \
+2020-06-24 14:40:44,458 - WARNING - Deleting VN ctest-vn-92346271 failed..Will retry\
+2020-06-24 14:40:46,982 - INFO - \
+2020-06-24 14:40:46,982 - INFO - END TEST : test_vm_file_trf_scp_tests : SKIPPED[0:00:30]\
+2020-06-24 14:40:46,982 - INFO - --------------------------------------------------------------------------------\
+2020-06-24 14:40:47,675 - INFO - Deleted project: ctest-TestBasicVMVNx-63847888, ID : 0aced1b3-1869-4fb9-815f-b776421d15e9 \
+2020-06-24 14:40:47,920 - INFO - Reading existing Domain with UUID f4984a98-90c7-478d-b9b5-43e122759627\
+2020-06-24 14:40:47,934 - INFO - Using existing domain [u'admin_domain'](f4984a98-90c7-478d-b9b5-43e122759627)\
+2020-06-24 14:40:48,054 - INFO - Project ctest-TestBasicVMVN-97733403 not found, creating it\
+2020-06-24 14:40:48,383 - INFO - Created Project:ctest-TestBasicVMVN-97733403, ID : 7af4d699-8681-47dc-b3be-912e8e6298fb \
+2020-06-24 14:40:49,869 - INFO - ================================================================================\
+2020-06-24 14:40:49,869 - INFO - STARTING TEST    : test_generic_link_local_service\
+2020-06-24 14:40:49,870 - INFO - TEST DESCRIPTION : \
+        Description: Test to validate generic linklocal service - running nova list from vm.\
+            1.Create generic link local service to be able to wget to jenkins\
+            2.Create a vm\
+            3.Try wget to jenkins - passes if successful else fails\
+\
+        Maintainer: sandipd@juniper.net\
+        \
+2020-06-24 14:40:50,246 - INFO - Initial checks done. Running the testcase now\
+2020-06-24 14:40:50,246 - INFO - \
+2020-06-24 14:40:51,428 - INFO - Created VN ctest-vn2_metadata-24167981\
+2020-06-24 14:40:52,079 - INFO - VM ([<Server: ctest-TestBasicVMVN-97733403-96971487>]) created on node: (ip-172-31-39-107), Zone: (nova:ip-172-31-39-107)\
+2020-06-24 14:40:57,573 - INFO - Waiting for VM ctest-TestBasicVMVN-97733403-96971487 to be up..\
+2020-06-24 14:40:57,573 - INFO - VM name : ctest-TestBasicVMVN-97733403-96971487\
+2020-06-24 14:41:07,706 - INFO - Ping to Metadata IP 169.254.0.7 of VM ctest-TestBasicVMVN-97733403-96971487 passed\
+2020-06-24 14:41:07,936 - INFO - Retry 0\
+2020-06-24 14:41:10,109 - INFO - Generic metadata worked\
+2020-06-24 14:41:10,468 - INFO - Deleting VM ctest-TestBasicVMVN-97733403-96971487\
+2020-06-24 14:41:10,700 - INFO - Deleting VN ctest-vn2_metadata-24167981 \
+2020-06-24 14:41:10,744 - WARNING - Deleting VN ctest-vn2_metadata-24167981 failed..Will retry\
+2020-06-24 14:41:13,297 - INFO - END TEST : test_generic_link_local_service : PASSED[0:00:24]\
+2020-06-24 14:41:13,298 - INFO - --------------------------------------------------------------------------------\
+2020-06-24 14:41:13,301 - INFO - ================================================================================\
+2020-06-24 14:41:13,301 - INFO - STARTING TEST    : test_ping_within_vn_two_vms_two_different_subnets\
+2020-06-24 14:41:13,301 - INFO - TEST DESCRIPTION : \
+        Description:  Validate Ping between 2 VMs in the same VN, 2 VMs in different VN\
+        subnets.\
+        Test steps:\
+                1. Create 1 IPAM's.\
+                2. Create 1 VN with 2 subnets and launch 2 VMs in them.\
+                3. Ping between the VMs in the same VN should go thru fine.\
+                4. Ping to the subnet broadcast and all-broadcast address.\
+        Pass criteria: VM in the same subnet will respond to both the pings, while the VM in a different VN should respond only to the\
+                        all-broadcast address.\
+        Maintainer : ganeshahv@juniper.net\
+        \
+2020-06-24 14:41:13,684 - INFO - Initial checks done. Running the testcase now\
+2020-06-24 14:41:13,684 - INFO - \
+2020-06-24 14:41:14,642 - INFO - Created VN ctest-vn-07308103\
+2020-06-24 14:41:16,121 - INFO - VM ([<Server: ctest-TestBasicVMVN-97733403-46196829>]) created on node: (ip-172-31-39-107), Zone: (nova:ip-172-31-39-107)\
+2020-06-24 14:41:16,668 - INFO - VM ([<Server: ctest-TestBasicVMVN-97733403-09420434>]) created on node: (ip-172-31-39-107), Zone: (nova:ip-172-31-39-107)\
+2020-06-24 14:41:17,555 - INFO - VM ([<Server: ctest-TestBasicVMVN-97733403-75271297>]) created on node: (ip-172-31-39-107), Zone: (nova:ip-172-31-39-107)\
+2020-06-24 14:41:17,646 - INFO - Verifications in API Server for IPAM: ctest-ipam-02345638 passed\
+2020-06-24 14:41:17,655 - INFO - Verifications in Control node for IPAM: ctest-ipam-02345638 passed\
+2020-06-24 14:41:17,837 - INFO - Verified VN network id 15 for VN 9c0f3d05-9088-4622-96f1-a244060319e0\
+2020-06-24 14:41:17,838 - INFO - Verifications in API Server for VN ctest-vn-07308103 passed\
+2020-06-24 14:41:17,889 - INFO - On all control nodes, Config, RI and RT verification for VN ctest-vn-07308103 passed\
+2020-06-24 14:41:18,408 - INFO - Validated that VN admin_domain:ctest-TestBasicVMVN-97733403:ctest-vn-07308103 is found in opserver\
+2020-06-24 14:41:18,416 - INFO - Waiting for VM ctest-TestBasicVMVN-97733403-46196829 to be up..\
+2020-06-24 14:41:23,746 - INFO - VM name : ctest-TestBasicVMVN-97733403-46196829\
+2020-06-24 14:41:41,772 - INFO - Ping to Metadata IP 169.254.0.7 of VM ctest-TestBasicVMVN-97733403-46196829 passed\
+2020-06-24 14:41:42,073 - INFO - Waiting for VM ctest-TestBasicVMVN-97733403-09420434 to be up..\
+2020-06-24 14:41:42,215 - INFO - VM name : ctest-TestBasicVMVN-97733403-09420434\
+2020-06-24 14:41:43,723 - INFO - Ping to Metadata IP 169.254.0.8 of VM ctest-TestBasicVMVN-97733403-09420434 passed\
+2020-06-24 14:41:44,041 - INFO - Waiting for VM ctest-TestBasicVMVN-97733403-75271297 to be up..\
+2020-06-24 14:41:44,178 - INFO - VM name : ctest-TestBasicVMVN-97733403-75271297\
+2020-06-24 14:41:45,631 - INFO - Ping to Metadata IP 169.254.0.9 of VM ctest-TestBasicVMVN-97733403-75271297 passed\
+2020-06-24 14:41:50,190 - INFO - Ping to IP 31.1.2.4 from VM ctest-TestBasicVMVN-97733403-46196829 passed\
+2020-06-24 14:41:54,315 - INFO - Ping to IP 31.1.1.4 from VM ctest-TestBasicVMVN-97733403-09420434 passed\
+2020-06-24 14:42:03,708 - INFO - Deleting VM ctest-TestBasicVMVN-97733403-75271297\
+2020-06-24 14:42:03,796 - INFO - Detaching port 80f5457f-7614-4fa1-987a-5ee63a0acf56 from VM ctest-TestBasicVMVN-97733403-09420434\
+2020-06-24 14:42:03,849 - INFO - Deleting VM ctest-TestBasicVMVN-97733403-09420434\
+2020-06-24 14:42:03,932 - INFO - Detaching port 5defb288-e383-46ff-b9be-fa6328e19857 from VM ctest-TestBasicVMVN-97733403-46196829\
+2020-06-24 14:42:03,979 - INFO - Deleting VM ctest-TestBasicVMVN-97733403-46196829\
+2020-06-24 14:42:04,066 - INFO - Deleting VN ctest-vn-07308103 \
+2020-06-24 14:42:04,522 - WARNING - Deleting VN ctest-vn-07308103 failed..Will retry\
+2020-06-24 14:42:06,758 - INFO - Validated that VN ctest-vn-07308103 is not found in API Server\
+2020-06-24 14:42:06,769 - INFO - Validated that VN ctest-vn-07308103 is not in any agent\
+2020-06-24 14:42:06,779 - INFO - Validated that all vrouters do not  have the route table for VN admin_domain:ctest-TestBasicVMVN-97733403:ctest-vn-07308103\
+2020-06-24 14:42:06,793 - INFO - Validated that Routing instances and Config db in Control-nodes does not have VN ctest-vn-07308103 info\
+2020-06-24 14:42:06,845 - INFO - IPAM: ctest-ipam-02345638 is not found in API Server\
+2020-06-24 14:42:06,856 - INFO - IPAM:ctest-ipam-02345638 is not found in control node\
+2020-06-24 14:42:07,229 - INFO - END TEST : test_ping_within_vn_two_vms_two_different_subnets : PASSED[0:00:54]\
+2020-06-24 14:42:07,229 - INFO - --------------------------------------------------------------------------------\
+2020-06-24 14:42:07,870 - INFO - Deleted project: ctest-TestBasicVMVN-97733403, ID : 7af4d699-8681-47dc-b3be-912e8e6298fb \
+}

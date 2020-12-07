@@ -1,0 +1,211 @@
+series: bionic
+variables:
+  docker-registry:              &docker-registry                "bng-artifactory.juniper.net/contrail-nightly"
+  image-tag:                    &image-tag                      "2011.107" 
+  data-network:                 &data-network                   "192.168.27.0/24" 
+  control-network:              &control-network                "192.168.7.0/24" 
+  vhost-gateway:                &vhost-gateway                  "192.168.27.1"
+services:
+  contrail-agent:
+    charm: /root/tf-charms/contrail-agent
+    options:
+      docker-registry: *docker-registry
+      docker-registry-insecure: true
+      vhost-gateway: *vhost-gateway
+      image-tag: *image-tag
+      log-level: SYS_DEBUG
+  contrail-analytics:
+    bindings:
+      "": mgmt
+    charm: /root/tf-charms/contrail-analytics
+    num_units: 3
+    to: 
+      - '0'
+      - '3'
+      - '4'
+    expose: true
+    options:
+      docker-registry: *docker-registry
+      docker-registry-insecure: true
+      control-network: *control-network
+      image-tag: *image-tag
+      log-level: SYS_DEBUG
+      min-cluster-size: 3
+  contrail-analyticsdb:
+    bindings:
+      "": mgmt
+    charm: /root/tf-charms/contrail-analyticsdb
+    num_units: 3
+    to: 
+      - '0'
+      - '3'
+      - '4'
+    expose: true
+    options:
+      cassandra-jvm-extra-opts: -Xms32g -Xmx32g
+      cassandra-minimum-diskgb: '4'
+      docker-registry: *docker-registry
+      docker-registry-insecure: true
+      image-tag: *image-tag
+      control-network: *control-network
+      log-level: SYS_DEBUG
+      min-cluster-size: 3
+  contrail-controller:
+    bindings:
+      "": mgmt
+    charm: /root/tf-charms/contrail-controller
+    num_units: 3
+    to: 
+      - '0'
+      - '3'
+      - '4'
+    expose: true
+    options:
+      auth-mode: 'no-auth'
+      cassandra-jvm-extra-opts: -Xms32g -Xmx32g
+      cassandra-minimum-diskgb: '4'
+      docker-registry: *docker-registry
+      docker-registry-insecure: true
+      image-tag: *image-tag
+      control-network: *control-network
+      data-network: *data-network
+      log-level: SYS_DEBUG
+      min-cluster-size: 3
+  contrail-kubernetes-master:
+    bindings:
+      "": mgmt
+    charm: /root/tf-charms/contrail-kubernetes-master
+    options:
+      cluster_name: k8s
+      docker-registry: *docker-registry
+      docker-registry-insecure: true
+      image-tag: *image-tag
+      control-network: *control-network
+      ip_fabric_snat: true
+      log-level: SYS_DEBUG
+      public_fip_pool: "{'domain':'default-domain','project':'k8s-default','name':'__fip_pool_public__','network':'__public__'}"
+      service_subnets: 10.96.0.0/12
+      kubernetes_api_hostname: 192.168.27.29
+      kubernetes_api_secure_port: "6443"
+  contrail-kubernetes-node:
+    bindings:
+      "": mgmt
+    charm: /root/tf-charms/contrail-kubernetes-node
+    options:
+      docker-registry: *docker-registry
+      docker-registry-insecure: true
+      image-tag: *image-tag
+      log-level: SYS_DEBUG
+  docker:
+    bindings:
+      "": mgmt
+    charm: cs:~containers/docker-59
+    options:
+      docker_runtime: custom
+      docker_runtime_key_url: https://download.docker.com/linux/ubuntu/gpg
+      docker_runtime_package: docker-ce
+      docker_runtime_repo:
+        deb [arch={ARCH}] https://download.docker.com/linux/ubuntu
+        {CODE} stable
+  easyrsa:
+    bindings:
+      "": mgmt
+    charm: cs:~containers/easyrsa-303
+    num_units: 1
+    to:
+      - '0'
+  etcd:
+    bindings:
+      "": mgmt
+    charm: cs:~containers/etcd-501
+    num_units: 1
+    to:
+      - '0'
+    options:
+      channel: 3.2/stable
+  kubernetes-master:
+    bindings:
+      "": mgmt
+    charm: cs:~containers/kubernetes-master-827
+    num_units: 1
+    to:
+      - '4'
+    expose: true
+    options:
+      install_sources: "- cloud:queens"
+      enable-metrics: false
+      enable-dashboard-addons: false
+      channel: '1.18/stable'
+      service-cidr: 10.96.0.0/12
+  kubernetes-worker:
+    bindings:
+      "": data
+    charm: cs:~containers/kubernetes-worker-665
+    num_units: 2
+    to:
+      - '2'
+      - '1'
+    options:
+      channel: 1.18/stable
+      ingress: false
+  ntp:
+    charm: cs:ntp
+    num_units: 0
+    options:
+      source: 10.204.217.158
+  ubuntu:
+    bindings:
+      "": mgmt
+    charm: cs:ubuntu-15
+    num_units: 5
+    to:
+      - '0'
+      - '1'
+      - '2'
+      - '3'
+      - '4'
+
+machines:
+  '0':
+    constraints: tags=controller-0
+    series: bionic
+  '1':
+    constraints: tags=compute-o7k
+    series: bionic
+  '2':
+    constraints: tags=compute-k8s
+    series: bionic
+  '3':
+    constraints: tags=controller-1
+    series: bionic
+  '4':
+    constraints: tags=controller-2
+    series: bionic
+  
+relations:
+- [ kubernetes-master:kube-api-endpoint, kubernetes-worker:kube-api-endpoint ]
+- [ kubernetes-master:kube-control, kubernetes-worker:kube-control ]
+- [ kubernetes-master:certificates, easyrsa:client ]
+- [ kubernetes-master:etcd, etcd:db ]
+- [ kubernetes-worker:certificates,  easyrsa:client ]
+- [ etcd:certificates, easyrsa:client ]
+- [ kubernetes-master:container-runtime, docker:docker]
+- [ kubernetes-worker:container-runtime, docker:docker]
+
+# contrail
+- [ ubuntu:juju-info, ntp:juju-info ]
+
+- [ contrail-controller, contrail-analytics ]
+- [ contrail-controller, contrail-analyticsdb ]
+- [ contrail-analytics, contrail-analyticsdb ]
+- [ contrail-agent, contrail-controller ]
+
+# contrail-kubernetes
+- [ contrail-kubernetes-node:cni, kubernetes-master:cni ]
+- [ contrail-kubernetes-node:cni, kubernetes-worker:cni ]
+- [ contrail-kubernetes-master:contrail-controller, contrail-controller:contrail-controller ]
+- [ contrail-kubernetes-master:kube-api-endpoint, kubernetes-master:kube-api-endpoint ]
+- [ contrail-agent:juju-info, kubernetes-worker:juju-info ]
+- [ contrail-agent:juju-info, kubernetes-master:juju-info ]
+- [ contrail-kubernetes-master:contrail-kubernetes-config, contrail-kubernetes-node:contrail-kubernetes-config ]
+ 

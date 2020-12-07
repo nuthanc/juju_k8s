@@ -1,0 +1,8 @@
+noden18: MAAS+Juju controller
+
+noden19: Compute (k8s compute)
+nodec9: Compute (o7k node)
+
+noden20: Controller
+noden29: Controller + k8s master
+nodei34: Controller 

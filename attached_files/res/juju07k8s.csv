@@ -1,0 +1,15 @@
+Jira Reference,TestArea,Section,Test Description/Title,PreConditions,Execution Steps,Expected Outcome/Results,ReleaseVersion
+CEM-6234,Canonical JuJu Contrail CNI (K8S) Deployment Using Existing Keystone,Deployment,TC1: deploy Openstack+k8s cluster,"- Ubuntu 18.04
+- 16 cpu
+- 64 GB RAM
+- 180 GiB disk Storage","This and other commands in execution steps are executed on juju jumphost
+$ git clone http://github.com/tungstenfabric/tf-devstack",,R2008
+,,,,,$ export ORCHESTRATOR=all,,
+,,,,,$ tf-devstack/juju/run.sh,INFO: Successful deployment Thu Jun 18 15:54:23 UTC 2020,
+,,,,,,,
+,,,TC2: Test cluster,,$ juju status,"all services should be in active state, agent should be idle
+(docker may be in maintenance state)",
+,,,,,$ sudo contrail-status,all services should be active,
+,,,,,,,
+,,,TC3: run sanity,with openstack tests set,all tests are PASSED,,
+,,,,with kubernetes tests set,all tests are PASSED,,

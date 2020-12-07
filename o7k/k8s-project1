@@ -1,0 +1,9 @@
+export OS_IDENTITY_API_VERSION=3
+export OS_USER_DOMAIN_NAME=k8s
+export OS_USERNAME=user1
+export OS_PROJECT_DOMAIN_NAME=k8s
+export OS_PROJECT_NAME=k8s-project1
+export OS_DOMAIN_NAME=k8s
+export OS_PASSWORD=c0ntrail123
+auth_url=$(juju status|grep 5000|awk '{print $5}')
+export OS_AUTH_URL=http://${auth_url}:5000/v3

@@ -1,0 +1,302 @@
+series: bionic
+applications:
+  contrail-agent:
+    charm: local:bionic/contrail-agent-0
+    options:
+      docker-registry: tungstenfabric
+      docker-registry-insecure: true
+      image-tag: latest
+      log-level: SYS_DEBUG
+  contrail-analytics:
+    charm: local:bionic/contrail-analytics-0
+    num_units: 1
+    to:
+      - '0'
+    expose: true
+    options:
+      docker-registry: tungstenfabric
+      docker-registry-insecure: true
+      image-tag: latest
+      log-level: SYS_DEBUG
+  contrail-analyticsdb:
+    charm: local:bionic/contrail-analyticsdb-0
+    num_units: 1
+    to:
+      - '0'
+    expose: true
+    options:
+      cassandra-jvm-extra-opts: -Xms1g -Xmx2g
+      cassandra-minimum-diskgb: '4'
+      docker-registry: tungstenfabric
+      docker-registry-insecure: true
+      image-tag: latest
+      log-level: SYS_DEBUG
+  contrail-controller:
+    charm: local:bionic/contrail-controller-0
+    num_units: 1
+    to:
+      - '0'
+    expose: true
+    options:
+      auth-mode: rbac
+      cassandra-jvm-extra-opts: -Xms1g -Xmx2g
+      cassandra-minimum-diskgb: '4'
+      docker-registry: tungstenfabric
+      docker-registry-insecure: true
+      image-tag: latest
+      log-level: SYS_DEBUG
+  contrail-keystone-auth:
+    charm: local:bionic/contrail-keystone-auth-0
+    num_units: 1
+    to:
+      - '0'
+  contrail-kubernetes-master:
+    charm: local:bionic/contrail-kubernetes-master-0
+    options:
+      cluster_name: k8s
+      docker-registry: tungstenfabric
+      docker-registry-insecure: true
+      image-tag: latest
+      ip_fabric_forwarding: true
+      log-level: SYS_DEBUG
+      public_fip_pool: "{'domain':'default-domain','project':'k8s-default','name':'__fip_pool_public__','network':'__public__'}"
+      service_subnets: 10.96.0.0/12
+  contrail-kubernetes-node:
+    charm: local:bionic/contrail-kubernetes-node-0
+    options:
+      docker-registry: tungstenfabric
+      docker-registry-insecure: true
+      image-tag: latest
+      log-level: SYS_DEBUG
+  contrail-openstack:
+    charm: local:bionic/contrail-openstack-0
+    options:
+      docker-registry: tungstenfabric
+      docker-registry-insecure: true
+      image-tag: latest
+  docker:
+    charm: cs:~containers/docker-59
+    options:
+      docker_runtime: custom
+      docker_runtime_key_url: https://download.docker.com/linux/ubuntu/gpg
+      docker_runtime_package: docker-ce
+      docker_runtime_repo:
+        deb [arch={ARCH}] https://download.docker.com/linux/ubuntu
+        {CODE} stable
+  easyrsa:
+    charm: cs:~containers/easyrsa-303
+    num_units: 1
+    to:
+      - '0'
+  etcd:
+    charm: cs:~containers/etcd-501
+    num_units: 1
+    to:
+      - '0'
+    options:
+      channel: 3.2/stable
+  glance:
+    charm: cs:glance-297
+    num_units: 1
+    to:
+      - lxd:0
+    options:
+      openstack-origin: distro
+  heat:
+    charm: cs:heat-276
+    num_units: 1
+    to:
+      - lxd:0
+    expose: true
+    options:
+      debug: true
+      openstack-origin: distro
+  keystone:
+    charm: cs:keystone-315
+    num_units: 1
+    to:
+      - lxd:0
+    options:
+      admin-password: password
+      admin-role: admin
+      debug: true
+      openstack-origin: distro
+  kubernetes-master:
+    charm: cs:~containers/kubernetes-master-827
+    num_units: 1
+    to:
+      - '0'
+    expose: true
+    options:
+      authorization-mode: Node,RBAC
+      channel: 1.18/stable
+      enable-dashboard-addons: false
+      enable-keystone-authorization: true
+      enable-metrics: false
+      service-cidr: 10.96.0.0/12
+  kubernetes-worker:
+    charm: cs:~containers/kubernetes-worker-665
+    num_units: 1
+    to:
+      - '0'
+    options:
+      channel: 1.18/stable
+      ingress: false
+  mysql:
+    charm: cs:percona-cluster-290
+    num_units: 1
+    to:
+      - lxd:0
+    options:
+      innodb-buffer-pool-size: 256M
+      max-connections: 1000
+      performance-schema: true
+      root-password: password
+  neutron-api:
+    charm: cs:neutron-api-286
+    num_units: 1
+    to:
+      - lxd:0
+    options:
+      debug: true
+      manage-neutron-plugin-legacy-mode: false
+      neutron-security-groups: true
+      openstack-origin: distro
+  nova-cloud-controller:
+    charm: cs:nova-cloud-controller-345
+    num_units: 1
+    to:
+      - lxd:0
+    options:
+      console-access-protocol: novnc
+      debug: true
+      network-manager: Neutron
+      openstack-origin: distro
+  nova-compute:
+    charm: cs:nova-compute-317
+    num_units: 1
+    to:
+      - '0'
+    options:
+      debug: true
+      openstack-origin: distro
+      virt-type: qemu
+  ntp:
+    charm: cs:ntp-39
+  openstack-dashboard:
+    charm: cs:openstack-dashboard-304
+    num_units: 1
+    to:
+      - lxd:0
+    options:
+      debug: 'true'
+      openstack-origin: distro
+  rabbitmq-server:
+    charm: cs:rabbitmq-server-103
+    num_units: 1
+    to:
+      - lxd:0
+  ubuntu:
+    charm: cs:ubuntu-15
+    num_units: 2
+    to:
+      - lxd:0
+      - '0'
+machines:
+  '0':
+    constraints: mem=3584
+relations:
+  - - kubernetes-master:kube-api-endpoint
+    - kubernetes-worker:kube-api-endpoint
+  - - kubernetes-master:kube-control
+    - kubernetes-worker:kube-control
+  - - kubernetes-master:certificates
+    - easyrsa:client
+  - - kubernetes-master:etcd
+    - etcd:db
+  - - kubernetes-worker:certificates
+    - easyrsa:client
+  - - etcd:certificates
+    - easyrsa:client
+  - - kubernetes-master:container-runtime
+    - docker:docker
+  - - kubernetes-worker:container-runtime
+    - docker:docker
+  - - ubuntu:juju-info
+    - ntp:juju-info
+  - - nova-compute:amqp
+    - rabbitmq-server:amqp
+  - - keystone:shared-db
+    - mysql:shared-db
+  - - nova-cloud-controller:identity-service
+    - keystone:identity-service
+  - - glance:identity-service
+    - keystone:identity-service
+  - - neutron-api:identity-service
+    - keystone:identity-service
+  - - neutron-api:shared-db
+    - mysql:shared-db
+  - - neutron-api:amqp
+    - rabbitmq-server:amqp
+  - - glance:shared-db
+    - mysql:shared-db
+  - - glance:amqp
+    - rabbitmq-server:amqp
+  - - nova-cloud-controller:image-service
+    - glance:image-service
+  - - nova-compute:image-service
+    - glance:image-service
+  - - nova-cloud-controller:cloud-compute
+    - nova-compute:cloud-compute
+  - - nova-cloud-controller:amqp
+    - rabbitmq-server:amqp
+  - - openstack-dashboard:identity-service
+    - keystone:identity-service
+  - - openstack-dashboard:shared-db
+    - mysql:shared-db
+  - - nova-cloud-controller:shared-db
+    - mysql:shared-db
+  - - nova-cloud-controller:neutron-api
+    - neutron-api:neutron-api
+  - - heat:shared-db
+    - mysql:shared-db
+  - - heat:amqp
+    - rabbitmq-server:amqp
+  - - heat:identity-service
+    - keystone:identity-service
+  - - contrail-controller:contrail-analytics
+    - contrail-analytics:contrail-analytics
+  - - contrail-controller:contrail-analyticsdb
+    - contrail-analyticsdb:contrail-analyticsdb
+  - - contrail-analytics:contrail-analyticsdb
+    - contrail-analyticsdb:contrail-analyticsdb
+  - - contrail-agent:contrail-controller
+    - contrail-controller:contrail-controller
+  - - contrail-controller:contrail-auth
+    - contrail-keystone-auth:contrail-auth
+  - - contrail-openstack:contrail-controller
+    - contrail-controller:contrail-controller
+  - - contrail-kubernetes-master:contrail-controller
+    - contrail-controller:contrail-controller
+  - - contrail-kubernetes-master:contrail-kubernetes-config
+    - contrail-kubernetes-node:contrail-kubernetes-config
+  - - contrail-keystone-auth:identity-admin
+    - keystone:identity-admin
+  - - contrail-openstack:neutron-api
+    - neutron-api:neutron-plugin-api-subordinate
+  - - contrail-openstack:heat-plugin
+    - heat:heat-plugin-subordinate
+  - - contrail-openstack:nova-compute
+    - nova-compute:neutron-plugin
+  - - contrail-agent:juju-info
+    - nova-compute:juju-info
+  - - contrail-kubernetes-node:cni
+    - kubernetes-master:cni
+  - - contrail-kubernetes-node:cni
+    - kubernetes-worker:cni
+  - - contrail-kubernetes-master:kube-api-endpoint
+    - kubernetes-master:kube-api-endpoint
+  - - contrail-agent:juju-info
+    - kubernetes-worker:juju-info
+  - - kubernetes-master:keystone-credentials
+    - keystone:identity-credentials

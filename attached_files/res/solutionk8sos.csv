@@ -1,0 +1,25 @@
+Jira Reference,TestArea,Section,Test Description/Title,PreConditions,Execution Steps,Expected Outcome/Results,ReleaseVersion
+CEM-17391,Canonical JuJu Contrail CNI (K8S) Deployment Using Existing Keystone,Solution Test Plan,TC1: deploy Openstack+k8s cluster,"- Ubuntu 18.04
+- 8 cpu
+- 32 GB RAM
+- 150 GiB disk Storage","This and other commands in execution steps are executed on juju jumphost 
+$ git clone http://github.com/tungstenfabric/tf-devstack$ export ORCHESTRATOR=all
+$ export ORCHESTRATOR=all
+$ tf-devstack/juju/run.sh",INFO: Successful deployment ,R2008
+,,,,,,,
+,,,TC2: Test cluster,,$ juju status,"all services should be in active state, agent should be idle
+(docker may be in maintenance state)",
+,,,,,$ sudo contrail-status,all services should be active,
+,,,,,,,
+,,,TC3: run sanity,,"with openstack tests set
+with kubernetes tests set",all tests are PASSED,
+,,,,,,,
+,,,TC4: Check AUTH section with keystone credentails,,Check that /etc/contrail/contrail-kubernetes.conf in kube-manager container have [AUTH] section with keystone user/password/token_url,,
+,,,,,,,
+,,,TC5: Check that k8s-keystone-auth pods are running in kube-system namespace,,kubectl get pods -n kube-system,Keystone-auth pod should be running in kube-system namespace,
+,,,,,,,
+,,,TC6: Stop and Start keystone-auth pod,,Stop the keystone and start it again and create pods again.,The pods should be up and running,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
